@@ -138,8 +138,8 @@ const MEMBROS = [
     nome: "Rafael Alves Pereira Machado",
     cargo: "Assessor de Comunicação",
     area: "Comunicação",
-    telefone: "(19) 99250-1492",
-    digitos: "19992501492",
+    telefone: "(19) 99879-0891",
+    digitos: "19998790891",
   },
   // ── Desenvolvimento ───────────────────────────────────────────
   {
