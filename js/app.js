@@ -10,7 +10,7 @@ const CONFIG = {
   titulo: "3ª Região Administrativa",
   subtitulo: "",
   logo: "assets/EMBLEMA 3° OFICIALARIA - GCE-CE.png",
-  areaDestaque: "Gabinete Regional",
+  areaDestaque: "Lideranças Regionais",
   ddi: "55",
 };
 
@@ -191,11 +191,21 @@ function filtrar() {
 /* ---------- RENDERIZAÇÃO DOS CARTÕES ---------- */
 function cardHtml(m, i, destaque) {
   const prio = prioridadeCargo(m.cargo);
+  const cargoNormalizado = normalizar(m.cargo);
   const classes = ["card"];
 
   if (destaque) classes.push("card--featured");
   if (destaque && prio === 1) classes.push("is-adj");
-  if (!destaque && (prio === 2 || /^coordenador/.test(normalizar(m.cargo)))) {
+
+  if (cargoNormalizado === "mestre conselheiro regional" || cargoNormalizado === "mcr") {
+    classes.push("card--mcr");
+  }
+
+  if (cargoNormalizado === "oficial executivo" || cargoNormalizado === "oe") {
+    classes.push("card--oe");
+  }
+
+  if (!destaque && (prio === 2 || /^coordenador/.test(cargoNormalizado))) {
     classes.push("card--lead");
   }
 
