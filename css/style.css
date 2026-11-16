@@ -22,30 +22,24 @@
   --black: #1b1b1b;
   --ink: #631716;
   --ink-soft: #8C1818;
-
   --wine: #631716;
   --red: #8C1818;
   --wine-deep: #631716;
-
   --gold: #A6813C;
   --gold-strong: #A6813C;
-
   --cream: #faf7f1;
   --cream-strong: #f1e9dc;
   --card: #ffffff;
   --text: #292421;
-
   --border: rgba(99, 23, 22, 0.14);
   --shadow: 0 18px 38px rgba(99, 23, 22, 0.09);
   --wa: #25d366;
   --radius: 24px;
-
   --font: "Montserrat", "Segoe UI", system-ui, sans-serif;
   --font-display: "Bahiana", Georgia, serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
-
 [hidden] { display: none !important; }
 
 html {
@@ -108,7 +102,6 @@ body {
 
 /* ---------- Cabeçalho ---------- */
 
-
 .hero {
   position: relative;
   color: #fff;
@@ -116,8 +109,8 @@ body {
   background:
     linear-gradient(
       0deg,
-      rgba(99, 23, 22, 0.78),
-      rgba(99, 23, 22, 0.58)
+      rgba(99, 23, 22, 0.68),
+      rgba(99, 23, 22, 0.42)
     ),
     url("../assets/CAPA SITE DA 3.png") center center / cover no-repeat;
   overflow: hidden;
@@ -231,9 +224,7 @@ body {
 }
 
 .title span { display: block; }
-
 .title-muted { color: #e5c98e; }
-
 .title-muted:empty { display: none; }
 
 .tagline {
@@ -530,7 +521,6 @@ body {
 }
 
 .section { padding-top: 40px; }
-
 .section-head { margin-bottom: 18px; }
 
 .section-eyebrow {
@@ -713,7 +703,6 @@ body {
 }
 
 .btn svg { width: 20px; height: 20px; flex: none; }
-
 .btn:active { transform: scale(.97); }
 
 .btn-wa {
@@ -1020,7 +1009,6 @@ body {
   }
 
   .card--featured { padding: 30px 28px 26px; }
-
   .card--featured .card-nome { font-size: 3.2rem; }
 
   .hero-logo {
@@ -1407,13 +1395,11 @@ mark {
 }
 
 .fab-top:hover { box-shadow: 0 18px 36px rgba(99, 23, 22, 0.4); }
-
 .fab-top:hover svg { animation: up .6s ease; }
 
 .toast { bottom: calc(84px + env(safe-area-inset-bottom)); }
 
 .section-eyebrow::before { transition: width .6s ease; }
-
 .section:hover .section-eyebrow::before { width: 44px; }
 
 @keyframes ripple {
