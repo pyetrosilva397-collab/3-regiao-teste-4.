@@ -8,7 +8,7 @@
  *
  * nome     → nome completo.
  * cargo    → função exercida.
- * area     → Gabinete Regional, Capítulos ou Priorado.
+ * area     → Lideranças Regionais, Capítulos ou Priorado.
  * detalhe  → identificação complementar, como o nome do Capítulo.
  * telefone → número para exibição.
  * digitos  → número completo, somente com algarismos.
@@ -24,14 +24,14 @@ const MEMBROS = [
   {
     nome: "Pyêtro Silva Santana",
     cargo: "Mestre Conselheiro Regional",
-    area: "Gabinete Regional",
+    area: "Lideranças Regionais",
     telefone: "(88) 99717-7363",
     digitos: "88997177363",
   },
   {
     nome: "Gabriell Tavares Luna",
     cargo: "Oficial Executivo",
-    area: "Gabinete Regional",
+    area: "Lideranças Regionais",
     telefone: "(88) 9218-2974",
     digitos: "8892182974",
   },
