@@ -1,629 +1,85 @@
+
 /*
- * Dados do Gabinete Estadual — DeMolay São Paulo
- * ------------------------------------------------
- * Para adicionar alguém, copie um bloco { ... } e altere os campos.
+ * Diretório de Contatos — 3ª Região Administrativa
+ * Ordem DeMolay do Ceará
+ * Gestão 2026/2027
  *
- *  nome      → nome completo ("Carlos Eduardo da Silva Filho").
- *              Se vier todo em CAIXA ALTA, o site converte para Title Case.
- *  cargo     → cargo exibido no card
- *  area      → nome da seção. Uma área nova vira uma seção nova automaticamente.
- *              As seções aparecem na ordem em que cada área surge pela 1ª vez aqui.
- *  detalhe   → (opcional) etiqueta pequena no card, ex.: "Macro A+B". Também entra na busca.
- *  telefone  → formato (DD) 9XXXX-XXXX
- *  digitos   → só os números (DDD + celular), usado nos links de WhatsApp/Ligar.
- *              Se ficar vazio, é calculado a partir do "telefone".
- *  ddi       → (opcional) código do país, só para número de fora do Brasil (ex.: "1" para EUA).
+ * Para adicionar um integrante, copie um bloco e preencha:
  *
- * Dentro de cada seção, o Mestre Conselheiro Estadual, o Adjunto e os
- * Secretários aparecem primeiro automaticamente; os demais seguem a ordem daqui.
+ * nome     → nome completo.
+ * cargo    → função exercida.
+ * area     → Gabinete Regional, Capítulos ou Priorado.
+ * detalhe  → identificação complementar, como o nome do Capítulo.
+ * telefone → número para exibição.
+ * digitos  → número completo, somente com algarismos.
+ * ddi      → código internacional, quando necessário.
+ *
+ * As seções aparecem na ordem em que são declaradas.
  */
+
 const MEMBROS = [
-  // ── Direção Estadual ──────────────────────────────────────────
-  {
-    nome: "Gabriel Ale Favaleça",
-    cargo: "Mestre Conselheiro Estadual",
-    area: "Direção Estadual",
-    telefone: "(17) 99622-0111",
-    digitos: "17996220111",
-  },
-  {
-    nome: "Julio Borges Lopes",
-    cargo: "Mestre Conselheiro Estadual Adj.",
-    area: "Direção Estadual",
-    telefone: "(19) 97122-9795",
-    digitos: "19971229795",
-  },
-  {
-    nome: "Guilherme Ribeiro Silva",
-    cargo: "Secretário Geral",
-    area: "Direção Estadual",
-    telefone: "(19) 98351-3643",
-    digitos: "19983513643",
-  },
-  // ── Ações Sociais ─────────────────────────────────────────────
-  {
-    nome: "Gustavo da Rocha Abbud",
-    cargo: "Secretário de Ações Sociais",
-    area: "Ações Sociais",
-    telefone: "(11) 98153-0939",
-    digitos: "11981530939",
-  },
-  {
-    nome: "Carlos Eduardo da Silva Filho",
-    cargo: "Assessor de Ações Sociais",
-    area: "Ações Sociais",
-    telefone: "(16) 99237-1894",
-    digitos: "16992371894",
-  },
-  {
-    nome: "Gabriel Carvalho de Siqueira Coelho",
-    cargo: "Assessor de Ações Sociais",
-    area: "Ações Sociais",
-    telefone: "(13) 99660-0418",
-    digitos: "13996600418",
-  },
-  {
-    nome: "João Pedro Pelegrini Paiva",
-    cargo: "Assessor de Ações Sociais",
-    area: "Ações Sociais",
-    telefone: "(19) 99893-0882",
-    digitos: "19998930882",
-  },
-  {
-    nome: "Kauan Rocco Bragião",
-    cargo: "Assessor de Ações Sociais",
-    area: "Ações Sociais",
-    telefone: "(19) 99887-0106",
-    digitos: "19998870106",
-  },
-  {
-    nome: "Matheus Sanches Signorelli dos Reis",
-    cargo: "Assessor de Ações Sociais",
-    area: "Ações Sociais",
-    telefone: "(16) 99101-4648",
-    digitos: "16991014648",
-  },
-  // ── Castelos ──────────────────────────────────────────────────
-  {
-    nome: "Fábio Coelho de Oliveira Filho",
-    cargo: "Secretário de Castelos",
-    area: "Castelos",
-    telefone: "(15) 99616-6141",
-    digitos: "15996166141",
-  },
-  {
-    nome: "Gil Cenzi Demazzi",
-    cargo: "Assessor de Castelos",
-    area: "Castelos",
-    telefone: "(18) 99805-1515",
-    digitos: "18998051515",
-  },
-  {
-    nome: "Pablo Alonso Ferracini Basso",
-    cargo: "Assessor de Castelos",
-    area: "Castelos",
-    telefone: "(16) 99771-5332",
-    digitos: "16997715332",
-  },
-  {
-    nome: "Pedro Henrique Vieira Silva",
-    cargo: "Assessor de Castelos",
-    area: "Castelos",
-    telefone: "(16) 99999-7068",
-    digitos: "16999997068",
-  },
-  // ── Comunicação ───────────────────────────────────────────────
-  {
-    nome: "Vinicius Ramos Sanches",
-    cargo: "Secretário de Comunicação",
-    area: "Comunicação",
-    telefone: "(14) 99611-1920",
-    digitos: "14996111920",
-  },
-  {
-    nome: "Gustavo Queiroz Lima",
-    cargo: "Assessor de Comunicação",
-    area: "Comunicação",
-    telefone: "(11) 94495-3562",
-    digitos: "11944953562",
-  },
-  {
-    nome: "João Pedro Rastelli Dias",
-    cargo: "Assessor de Comunicação",
-    area: "Comunicação",
-    telefone: "(17) 98187-6467",
-    digitos: "17981876467",
-  },
-  {
-    nome: "Rafael Alves Pereira Machado",
-    cargo: "Assessor de Comunicação",
-    area: "Comunicação",
-    telefone: "(19) 99879-0891",
-    digitos: "19998790891",
-  },
-  // ── Desenvolvimento ───────────────────────────────────────────
-  {
-    nome: "João Vitor Garcia Lourenço",
-    cargo: "Secretário de Desenvolvimento",
-    area: "Desenvolvimento",
-    telefone: "(21) 99343-1959",
-    digitos: "21993431959",
-  },
-  {
-    nome: "Arthur Halateno Fagundes",
-    cargo: "Assessor de Desenvolvimento",
-    area: "Desenvolvimento",
-    telefone: "(11) 98498-2094",
-    digitos: "11984982094",
-  },
-  {
-    nome: "Paulo Henrique Goes Genari",
-    cargo: "Assessor de Desenvolvimento",
-    area: "Desenvolvimento",
-    telefone: "(19) 97112-8548",
-    digitos: "19971128548",
-  },
-  {
-    nome: "Rodrigo Levy Carijó",
-    cargo: "Assessor de Desenvolvimento",
-    area: "Desenvolvimento",
-    telefone: "(13) 98144-6851",
-    digitos: "13981446851",
-  },
-  // ── Projetos ──────────────────────────────────────────────────
-  {
-    nome: "Miguel Cassiano Furtado Ribeiro",
-    cargo: "Secretário de Projetos",
-    area: "Projetos",
-    telefone: "(18) 99601-3759",
-    digitos: "18996013759",
-  },
-  {
-    nome: "Guilherme Mafra Protti Pedro",
-    cargo: "Assessor de Projetos",
-    area: "Projetos",
-    telefone: "(18) 99121-8121",
-    digitos: "18991218121",
-  },
-  {
-    nome: "Yuji Ito Barbosa dos Santos",
-    cargo: "Coordenador do DeMolay de Ouro",
-    area: "Projetos",
-    telefone: "(18) 99143-3547",
-    digitos: "18991433547",
-  },
-  {
-    nome: "Felipe Guerrini Sartori",
-    cargo: "Assessor do DeMolay de Ouro",
-    area: "Projetos",
-    telefone: "(19) 98892-7077",
-    digitos: "19988927077",
-  },
-  {
-    nome: "Étore do Prado Catharin",
-    cargo: "Assessor do DeMolay de Ouro",
-    area: "Projetos",
-    telefone: "(16) 98112-2311",
-    digitos: "16981122311",
-  },
-  {
-    nome: "Gustavo Carriel Furoni",
-    cargo: "Assessor do DeMolay de Ouro",
-    area: "Projetos",
-    telefone: "(19) 99927-0054",
-    digitos: "19999270054",
-  },
-  {
-    nome: "Pedro Washington Souza Santos de Abreu",
-    cargo: "Assessor do DeMolay de Ouro",
-    area: "Projetos",
-    telefone: "(18) 99130-5852",
-    digitos: "18991305852",
-  },
-  {
-    nome: "Guilherme Henrique Rodrigues Reis",
-    cargo: "Coordenador do Iniciático de Ouro",
-    area: "Projetos",
-    telefone: "(11) 96249-1674",
-    digitos: "11962491674",
-  },
-  {
-    nome: "Gabriel Oliveira Araújo",
-    cargo: "Assessor do Iniciático de Ouro",
-    area: "Projetos",
-    telefone: "(11) 91109-7767",
-    digitos: "11911097767",
-  },
-  {
-    nome: "Henrique Rodrigues Lima",
-    cargo: "Assessor do Iniciático de Ouro",
-    area: "Projetos",
-    telefone: "(11) 91488-5359",
-    digitos: "11914885359",
-  },
-  {
-    nome: "Victor Carneiro Feltrini",
-    cargo: "Assessor do Iniciático de Ouro",
-    area: "Projetos",
-    telefone: "(17) 99122-2128",
-    digitos: "17991222128",
-  },
-  {
-    nome: "Heitor Rodolpho de Lucca",
-    cargo: "Coordenador do Núcleo de Campanhas Nacionais",
-    area: "Projetos",
-    telefone: "(17) 99638-0909",
-    digitos: "17996380909",
-  },
-  {
-    nome: "Denis Pinatto de Souza",
-    cargo: "Assessor do Núcleo de Campanhas Nacionais",
-    area: "Projetos",
-    telefone: "(17) 99724-3830",
-    digitos: "17997243830",
-  },
-  {
-    nome: "João Guilherme Soligo",
-    cargo: "Assessor do Núcleo de Campanhas Nacionais",
-    area: "Projetos",
-    telefone: "(17) 99741-2515",
-    digitos: "17997412515",
-  },
-  {
-    nome: "Jonas Messiano Santos Prata",
-    cargo: "Assessor do Núcleo de Campanhas Nacionais",
-    area: "Projetos",
-    telefone: "(16) 99337-3785",
-    digitos: "16993373785",
-  },
-  {
-    nome: "Henrique Marin Machado",
-    cargo: "Coordenador do TEDES",
-    area: "Projetos",
-    telefone: "(321) 410-9356",
-    digitos: "3214109356",
-    ddi: "1",
-  },
-  {
-    nome: "Lucas Daniel Batista Painço",
-    cargo: "Assessor do TEDES",
-    area: "Projetos",
-    telefone: "(15) 99140-7454",
-    digitos: "15991407454",
-  },
-  {
-    nome: "Marcio Adriano Calcagno Devai Rodrigues",
-    cargo: "Assessor do TEDES",
-    area: "Projetos",
-    telefone: "(11) 97192-2825",
-    digitos: "11971922825",
-  },
-  {
-    nome: "Wandick Evangelista da Silva Júnior",
-    cargo: "Assessor do TEDES",
-    area: "Projetos",
-    telefone: "(16) 99618-7007",
-    digitos: "16996187007",
-  },
-  // ── Regionais ─────────────────────────────────────────────────
-  {
-    nome: "José Roberto Scali Junior",
-    cargo: "Secretário de Regionais",
-    area: "Regionais",
-    telefone: "(18) 99798-0704",
-    digitos: "18997980704",
-  },
-  {
-    nome: "Heitor Tonin Bernardo",
-    cargo: "Assessor de Regionais",
-    area: "Regionais",
-    telefone: "(17) 99641-3838",
-    digitos: "17996413838",
-  },
-  // ── Ritualística ──────────────────────────────────────────────
-  {
-    nome: "Pedro De Cico Bataglia Cornicelli",
-    cargo: "Secretário de Ritualística",
-    area: "Ritualística",
-    telefone: "(16) 99411-8737",
-    digitos: "16994118737",
-  },
-  {
-    nome: "Gabriel de Souza Lima",
-    cargo: "Assessor de Ritualística",
-    area: "Ritualística",
-    telefone: "(13) 99152-1398",
-    digitos: "13991521398",
-  },
-  {
-    nome: "Gabriel Luz Pereira",
-    cargo: "Assessor de Ritualística",
-    area: "Ritualística",
-    telefone: "(11) 94226-7698",
-    digitos: "11942267698",
-  },
-  {
-    nome: "Guilherme Bolis Jacinto",
-    cargo: "Assessor de Ritualística",
-    area: "Ritualística",
-    telefone: "(18) 99757-8434",
-    digitos: "18997578434",
-  },
-  {
-    nome: "João Pedro Nogueira Barbosa",
-    cargo: "Assessor de Ritualística",
-    area: "Ritualística",
-    telefone: "(16) 98218-7233",
-    digitos: "16982187233",
-  },
-  // ── Cursinho DeMolay ──────────────────────────────────────────
-  {
-    nome: "Guilherme Ribeiro Silva",
-    cargo: "Secretário Geral",
-    area: "Cursinho DeMolay",
-    telefone: "(19) 98351-3643",
-    digitos: "19983513643",
-  },
-  {
-    nome: "Bruno Eduardo Macera Tase",
-    cargo: "Assessor do Cursinho DeMolay",
-    area: "Cursinho DeMolay",
-    telefone: "(18) 99766-1920",
-    digitos: "18997661920",
-  },
-  {
-    nome: "Matheus Cano de Haro Carvalho",
-    cargo: "Assessor do Cursinho DeMolay",
-    area: "Cursinho DeMolay",
-    telefone: "(17) 99614-1133",
-    digitos: "17996141133",
-  },
-  {
-    nome: "Pedro Faria Belo",
-    cargo: "Assessor do Cursinho DeMolay",
-    area: "Cursinho DeMolay",
-    telefone: "(11) 97109-3371",
-    digitos: "11971093371",
-  },
-  {
-    nome: "Thiago Camargo Machado",
-    cargo: "Assessor do Cursinho DeMolay",
-    area: "Cursinho DeMolay",
-    telefone: "(15) 98100-0340",
-    digitos: "15981000340",
-  },
-  // ── Mestres Conselheiros Regionais ────────────────────────────
-  {
-    nome: "Gabriel de Souza Lima",
-    cargo: "Mestre Conselheiro Regional - 1ª Região",
-    area: "Mestres Conselheiros Regionais",
-    detalhe: "Macro A+B",
-    telefone: "(13) 99152-1398",
-    digitos: "13991521398",
-  },
-  {
-    nome: "Marcio Adriano Calcagno Devai Rodrigues",
-    cargo: "Mestre Conselheiro Regional - 2ª Região",
-    area: "Mestres Conselheiros Regionais",
-    detalhe: "Macro A+B",
-    telefone: "(11) 97192-2825",
-    digitos: "11971922825",
-  },
-  {
-    nome: "Gabriel Barbosa Freire de Oliveira",
-    cargo: "Mestre Conselheiro Regional - 3ª Região",
-    area: "Mestres Conselheiros Regionais",
-    detalhe: "Macro C",
-    telefone: "(19) 99245-8970",
-    digitos: "19992458970",
-  },
-  {
-    nome: "Leandro dos Santos São Romão",
-    cargo: "Mestre Conselheiro Regional - 4ª Região",
-    area: "Mestres Conselheiros Regionais",
-    detalhe: "Macro D+H",
-    telefone: "(17) 99714-7617",
-    digitos: "17997147617",
-  },
-  {
-    nome: "Lucas Marques Pereira",
-    cargo: "Mestre Conselheiro Regional - 5ª Região",
-    area: "Mestres Conselheiros Regionais",
-    detalhe: "Macro E",
-    telefone: "(16) 98245-0619",
-    digitos: "16982450619",
-  },
-  {
-    nome: "Victor Carneiro Feltrini",
-    cargo: "Mestre Conselheiro Regional - 6ª Região",
-    area: "Mestres Conselheiros Regionais",
-    detalhe: "Macro D+H",
-    telefone: "(17) 99122-2128",
-    digitos: "17991222128",
-  },
-  {
-    nome: "Guilherme Martins Giovanetti",
-    cargo: "Mestre Conselheiro Regional - 7ª Região",
-    area: "Mestres Conselheiros Regionais",
-    detalhe: "Macro F",
-    telefone: "(14) 99663-9841",
-    digitos: "14996639841",
-  },
-  {
-    nome: "Khael Rodrigues Torrecilhas",
-    cargo: "Mestre Conselheiro Regional - 8ª Região",
-    area: "Mestres Conselheiros Regionais",
-    detalhe: "Macro A+B",
-    telefone: "(11) 95016-6004",
-    digitos: "11950166004",
-  },
-  {
-    nome: "Leonardo Rodrigues Freitas Bispo",
-    cargo: "Mestre Conselheiro Regional - 9ª Região",
-    area: "Mestres Conselheiros Regionais",
-    detalhe: "Macro G",
-    telefone: "(11) 99353-2721",
-    digitos: "11993532721",
-  },
-  {
-    nome: "João Pedro Franzoe Passeli",
-    cargo: "Mestre Conselheiro Regional - 10ª Região",
-    area: "Mestres Conselheiros Regionais",
-    detalhe: "Macro D+H",
-    telefone: "(18) 99815-2094",
-    digitos: "18998152094",
-  },
-  {
-    nome: "Gabriel Henrique Peres Lopes",
-    cargo: "Mestre Conselheiro Regional - 11ª Região",
-    area: "Mestres Conselheiros Regionais",
-    detalhe: "Macro E",
-    telefone: "(17) 99266-1212",
-    digitos: "17992661212",
-  },
-  {
-    nome: "Murilo Augusto Santos Silva",
-    cargo: "Mestre Conselheiro Regional - 12ª Região",
-    area: "Mestres Conselheiros Regionais",
-    detalhe: "Macro I",
-    telefone: "(18) 99693-7493",
-    digitos: "18996937493",
-  },
-  {
-    nome: "Thiago Ferreira de Godoi",
-    cargo: "Mestre Conselheiro Regional - 13ª Região",
-    area: "Mestres Conselheiros Regionais",
-    detalhe: "Macro A+B",
-    telefone: "(11) 96600-8693",
-    digitos: "11966008693",
-  },
-  {
-    nome: "Filipe Rodrigues Cavalcante",
-    cargo: "Mestre Conselheiro Regional - 14ª Região",
-    area: "Mestres Conselheiros Regionais",
-    detalhe: "Macro J",
-    telefone: "(16) 99720-5714",
-    digitos: "16997205714",
-  },
-  {
-    nome: "Jonas Messiano Santos Prata",
-    cargo: "Mestre Conselheiro Regional - 15ª Região",
-    area: "Mestres Conselheiros Regionais",
-    detalhe: "Macro E",
-    telefone: "(16) 99337-3785",
-    digitos: "16993373785",
-  },
-  {
-    nome: "Antônio Augusto Nunes Chaves do Carmo Pimentel",
-    cargo: "Mestre Conselheiro Regional - 17ª Região",
-    area: "Mestres Conselheiros Regionais",
-    detalhe: "Macro I",
-    telefone: "(14) 99732-0921",
-    digitos: "14997320921",
-  },
-  {
-    nome: "Rafael de Moraes Pera",
-    cargo: "Mestre Conselheiro Regional - 19ª Região",
-    area: "Mestres Conselheiros Regionais",
-    detalhe: "Macro F",
-    telefone: "(17) 99779-5761",
-    digitos: "17997795761",
-  },
-  {
-    nome: "Davi Henrico Martins Sales",
-    cargo: "Mestre Conselheiro Regional - 20ª Região",
-    area: "Mestres Conselheiros Regionais",
-    detalhe: "Macro A+B",
-    telefone: "(11) 99308-3271",
-    digitos: "11993083271",
-  },
-  {
-    nome: "Rafael Bortolon",
-    cargo: "Mestre Conselheiro Regional - 23ª Região",
-    area: "Mestres Conselheiros Regionais",
-    detalhe: "Macro J",
-    telefone: "(19) 99345-7477",
-    digitos: "19993457477",
-  },
-  {
-    nome: "Enzo Santiago e Silva",
-    cargo: "Mestre Conselheiro Regional - 24ª Região",
-    area: "Mestres Conselheiros Regionais",
-    detalhe: "Macro G",
-    telefone: "(12) 99215-5009",
-    digitos: "12992155009",
-  },
-  {
-    nome: "Ryan Fernando de Almeida",
-    cargo: "Mestre Conselheiro Regional - 26ª Região",
-    area: "Mestres Conselheiros Regionais",
-    detalhe: "Macro E",
-    telefone: "(16) 99637-2939",
-    digitos: "16996372939",
-  },
-  {
-    nome: "Felipe Guerrini Sartori",
-    cargo: "Mestre Conselheiro Regional - 27ª Região",
-    area: "Mestres Conselheiros Regionais",
-    detalhe: "Macro C",
-    telefone: "(19) 98892-7077",
-    digitos: "19988927077",
-  },
-  {
-    nome: "Henrique Marin Machado",
-    cargo: "Mestre Conselheiro Regional - 28ª Região",
-    area: "Mestres Conselheiros Regionais",
-    detalhe: "Macro K",
-    telefone: "(321) 410-9356",
-    digitos: "3214109356",
-    ddi: "1",
-  },
-  {
-    nome: "Davi Mielli Garcia",
-    cargo: "Mestre Conselheiro Regional - 29ª Região",
-    area: "Mestres Conselheiros Regionais",
-    detalhe: "Macro G",
-    telefone: "(12) 99227-7375",
-    digitos: "12992277375",
-  },
-  {
-    nome: "Guilherme Ribeiro Davoli",
-    cargo: "Mestre Conselheiro Regional - 30ª Região",
-    area: "Mestres Conselheiros Regionais",
-    detalhe: "Macro J",
-    telefone: "(19) 99187-3737",
-    digitos: "19991873737",
-  },
-  {
-    nome: "Enrico de Lima Aguiar",
-    cargo: "Mestre Conselheiro Regional - 31ª Região",
-    area: "Mestres Conselheiros Regionais",
-    detalhe: "Macro C",
-    telefone: "(19) 99658-1182",
-    digitos: "19996581182",
-  },
-  {
-    nome: "Kevin Leonardo de Godoi Padilha",
-    cargo: "Mestre Conselheiro Regional - 32ª Região",
-    area: "Mestres Conselheiros Regionais",
-    detalhe: "Macro K",
-    telefone: "(15) 98149-0424",
-    digitos: "15981490424",
-  },
-  {
-    nome: "Guilherme Mosca",
-    cargo: "Mestre Conselheiro Regional - 33ª Região",
-    area: "Mestres Conselheiros Regionais",
-    detalhe: "Macro D+H",
-    telefone: "(18) 98173-2392",
-    digitos: "18981732392",
-  },
-  {
-    nome: "Miguel Cassiano Furtado Ribeiro",
-    cargo: "Mestre Conselheiro Regional - 36ª Região",
-    area: "Mestres Conselheiros Regionais",
-    detalhe: "Macro D+H",
-    telefone: "(18) 99601-3759",
-    digitos: "18996013759",
-  },
+
+  // ── Gabinete Regional ────────────────────────────────
+
+  {
+    nome: "Pyêtro Silva Santana",
+    cargo: "Mestre Conselheiro Regional",
+    area: "Gabinete Regional",
+    telefone: "(88) 99717-7363",
+    digitos: "88997177363",
+  },
+  {
+    nome: "Gabriell Tavares Luna",
+    cargo: "Oficial Executivo",
+    area: "Gabinete Regional",
+    telefone: "(88) 9218-2974",
+    digitos: "8892182974",
+  },
+
+  // ── Capítulos ────────────────────────────────────────
+
+  {
+    nome: "Stênio Almeida Moreira",
+    cargo: "Mestre Conselheiro",
+    area: "Capítulos",
+    detalhe: "Cap. Tio Damião Dãozinho de Melo nº 102",
+    telefone: "(88) 9743-9984",
+    digitos: "8897439984",
+  },
+  {
+    nome: "Kalil Gonçalves Figueirôa",
+    cargo: "Mestre Conselheiro",
+    area: "Capítulos",
+    detalhe: "Cap. Terra do Senhor Menino Deus nº 908",
+    telefone: "(88) 9645-0751",
+    digitos: "8896450751",
+  },
+  {
+    nome: "Gustavo Figueiredo Ferreira",
+    cargo: "Mestre Conselheiro",
+    area: "Capítulos",
+    detalhe: "Cap. Tio Geraldo Luiz Gonzaga nº 891",
+    telefone: "(88) 9910-6201",
+    digitos: "8899106201",
+  },
+  {
+    nome: "Antony Erick Ferreira dos Santos",
+    cargo: "Mestre Conselheiro",
+    area: "Capítulos",
+    detalhe: "Cap. Guardiões da Juventude Mauritiense nº 761",
+    telefone: "(12) 98134-7320",
+    digitos: "12981347320",
+  },
+
+  // ── Priorado ─────────────────────────────────────────
+
+  {
+    nome: "Dourival Lins de Albuquerque Netto",
+    cargo: "Ilustre Comendador Cavaleiro",
+    area: "Priorado",
+    detalhe: "Priorado Cavaleiros do Sertão Caririense nº 192",
+    telefone: "(85) 9828-3587",
+    digitos: "8598283587",
+  },
+
 ];
