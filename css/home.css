@@ -1681,15 +1681,17 @@ a {
     animation-iteration-count: 1 !important;
   }
 }
-/* CONTATOS — OCULTOS TEMPORARIAMENTE */
 
-/* Oculta a seção de contatos */
-#contatos,
+/* =========================================================
+   CONTATOS — OCULTOS TEMPORARIAMENTE
+   ========================================================= */
+
+/* Oculta a faixa de contatos da página inicial */
 .contact-banner {
   display: none !important;
 }
 
 /* Oculta o link Contatos do menu */
-.nav a[href="#contatos"] {
+.nav a[href="contatos.html"] {
   display: none !important;
 }
