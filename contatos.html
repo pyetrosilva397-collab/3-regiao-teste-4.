@@ -22,6 +22,29 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
   <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    .home-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      color: #A6813C;
+      font-size: 12px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .home-link:hover {
+      opacity: 0.75;
+    }
+
+    @media (max-width: 600px) {
+      .home-link {
+        font-size: 11px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -29,6 +52,11 @@
 
   <header class="hero">
     <div class="topbar">
+
+      <a href="index.html" class="home-link">
+        ← Página inicial
+      </a>
+
       <div class="topbar-logo">
         <img src="assets/EMBLEMA 3° OFICIALARIA - GCE-CE.png"
              alt="Emblema da 3ª Região Administrativa"
@@ -133,6 +161,10 @@
         </p>
         <span class="footer-site">3ª Região Administrativa</span>
       </div>
+
+      <a href="index.html" class="home-link">
+        ← Voltar à página inicial
+      </a>
     </div>
   </footer>
 
