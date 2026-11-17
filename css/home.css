@@ -5,8 +5,6 @@
    Tipografia: Bahiana + Montserrat
    ========================================================= */
 
-/* FONTES */
-
 @font-face {
   font-family: "Bahiana";
   src: url("../assets/Bahiana-Regular.ttf") format("truetype");
@@ -20,8 +18,6 @@
   font-display: swap;
 }
 
-/* VARIÁVEIS */
-
 :root {
   --red: #8C1818;
   --wine: #631716;
@@ -31,10 +27,8 @@
   --text: #282321;
   --muted: #756D67;
   --soft: #F0E9DE;
-  --border: rgba(99, 23, 22, 0.12);
+  --border: rgba(99, 23, 22, 0.13);
 }
-
-/* CONFIGURAÇÕES GERAIS */
 
 * {
   margin: 0;
@@ -60,20 +54,21 @@ a {
 }
 
 img {
+  display: block;
   max-width: 100%;
 }
 
 /* CABEÇALHO */
 
 .header {
+  position: relative;
+  z-index: 10;
   width: 100%;
   background: var(--white);
   border-bottom: 1px solid var(--border);
-  position: relative;
-  z-index: 10;
 }
 
-.header-inner {
+.header-content {
   max-width: 1320px;
   min-height: 92px;
   margin: auto;
@@ -98,48 +93,34 @@ img {
 }
 
 .brand span {
-  display: flex;
-  flex-direction: column;
-  line-height: 1.3;
-}
-
-.brand strong {
+  display: block;
   color: var(--wine);
-  font-size: 16px;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.25;
 }
 
 .brand small {
+  display: block;
   color: var(--muted);
   font-size: 10px;
 }
 
-.navigation {
+.nav {
   display: flex;
   align-items: center;
-  gap: 25px;
+  flex-wrap: wrap;
+  gap: 23px;
 }
 
-.navigation a {
-  font-size: 12px;
+.nav a {
+  font-size: 11px;
   font-weight: 700;
-  transition: color 0.2s;
+  transition: color 0.2s ease;
 }
 
-.navigation a:hover {
+.nav a:hover {
   color: var(--gold);
-}
-
-.navigation .nav-button {
-  padding: 11px 21px;
-  color: var(--white);
-  background: var(--wine);
-  border-radius: 3px;
-  transition: background 0.2s;
-}
-
-.navigation .nav-button:hover {
-  color: var(--white);
-  background: var(--red);
 }
 
 /* CAPA PRINCIPAL */
@@ -152,23 +133,16 @@ img {
   overflow: hidden;
   color: var(--white);
   background:
-    linear-gradient(
-      90deg,
-      rgba(50, 8, 8, 0.94),
-      rgba(99, 23, 22, 0.78),
-      rgba(99, 23, 22, 0.30)
-    ),
+    linear-gradient(90deg, rgba(50, 8, 8, 0.94), rgba(99, 23, 22, 0.78), rgba(99, 23, 22, 0.30)),
     url("../assets/CAPA SITE DA 3.png") center/cover no-repeat;
 }
 
-.hero-overlay {
+.hero::after {
+  content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    0deg,
-    rgba(45, 10, 10, 0.35),
-    transparent 45%
-  );
+  background: linear-gradient(0deg, rgba(45, 10, 10, 0.35), transparent 45%);
+  pointer-events: none;
 }
 
 .hero-content {
@@ -189,6 +163,7 @@ img {
 }
 
 .hero h1 {
+  max-width: 850px;
   margin: 20px 0;
   font-family: "Bahiana", Georgia, serif;
   font-size: clamp(68px, 9vw, 120px);
@@ -197,63 +172,30 @@ img {
   letter-spacing: 1px;
 }
 
-.hero-description {
+.hero-content > p:not(.eyebrow) {
   max-width: 600px;
   color: rgba(255, 255, 255, 0.86);
   font-size: 15px;
   line-height: 1.9;
 }
 
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 13px;
-  margin-top: 35px;
-}
-
-.button {
+.hero-button {
   min-height: 50px;
+  margin-top: 35px;
   padding: 14px 25px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  font-size: 11px;
-  font-weight: 700;
-  transition: 0.2s;
-}
-
-.button-primary {
   background: var(--gold);
   color: var(--white);
+  font-size: 11px;
+  font-weight: 700;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
-.button-primary:hover {
+.hero-button:hover {
   background: #8D6D31;
-}
-
-.button-outline {
-  border: 1px solid rgba(255, 255, 255, 0.7);
-  color: var(--white);
-}
-
-.button-outline:hover {
-  background: var(--white);
-  color: var(--wine);
-}
-
-.hero-footer {
-  position: absolute;
-  z-index: 1;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  padding: 22px 35px;
-  display: flex;
-  justify-content: space-between;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 10px;
-  letter-spacing: 2px;
+  transform: translateY(-2px);
 }
 
 /* SEÇÕES GERAIS */
@@ -293,59 +235,90 @@ img {
   gap: 65px;
 }
 
-.intro-content p {
+.intro-content .eyebrow {
+  grid-column: 1 / -1;
+  margin-bottom: -45px;
+}
+
+.intro-content h2 {
+  color: var(--wine);
+  font-family: "Bahiana", Georgia, serif;
+  font-size: clamp(44px, 5vw, 65px);
+  font-weight: 400;
+  line-height: 1.08;
+}
+
+.intro-content p:not(.eyebrow) {
   color: #625A55;
   font-size: 14px;
   line-height: 2;
 }
 
-/* QUILÔMETROS PERCORRIDOS */
+/* GESTÃO EM NÚMEROS */
 
-.distance-section {
-  padding: 85px 30px;
+.management-section {
+  max-width: none;
+  padding: 105px max(35px, calc((100% - 1170px) / 2));
   background: var(--wine);
   color: var(--white);
-  text-align: center;
 }
 
-.distance-content {
-  max-width: 1050px;
-  margin: auto;
+.management-section .section-heading {
+  max-width: 760px;
 }
 
-.distance-heading {
-  color: rgba(255, 255, 255, 0.75);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 3px;
-  text-transform: uppercase;
+.management-section .section-heading h2 {
+  color: var(--white);
 }
 
-.distance-counter {
-  margin: 15px 0 5px;
-  display: flex;
-  align-items: baseline;
-  justify-content: center;
-  gap: 12px;
+.management-section .section-heading > p:last-child {
+  color: rgba(255, 255, 255, 0.72);
 }
 
-.distance-number {
+.management-section .eyebrow {
+  color: #E8CF9E;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.stat-card {
+  min-height: 220px;
+  padding: 30px 24px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-top: 3px solid var(--gold);
+}
+
+.stat-number {
+  display: block;
   color: var(--gold);
   font-family: "Bahiana", Georgia, serif;
-  font-size: clamp(90px, 13vw, 150px);
+  font-size: clamp(58px, 6vw, 82px);
   line-height: 1;
 }
 
-.distance-unit {
+.stat-card h3 {
+  margin-top: 15px;
   color: var(--white);
-  font-family: "Bahiana", Georgia, serif;
-  font-size: clamp(35px, 5vw, 55px);
+  font-size: 12px;
+  font-weight: 700;
 }
 
-.distance-content > p:last-child {
-  margin-top: 15px;
-  color: rgba(255, 255, 255, 0.7);
-  font-size: 12px;
+.stat-card p {
+  margin-top: 9px;
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 10px;
+  line-height: 1.8;
+}
+
+.stats-note {
+  margin-top: 25px;
+  color: rgba(255, 255, 255, 0.58);
+  font-size: 10px;
 }
 
 /* FRASE DE DESTAQUE */
@@ -362,33 +335,13 @@ img {
   margin: auto;
 }
 
-.quote-mark {
-  display: block;
-  color: var(--gold);
-  font-family: Georgia, serif;
-  font-size: 85px;
-  line-height: 0.9;
-}
-
-.quote-content h2 {
+.quote-content p {
   font-family: "Bahiana", Georgia, serif;
   font-size: clamp(42px, 6vw, 72px);
-  font-weight: 400;
   line-height: 1.1;
 }
 
-.quote-content p {
-  margin-top: 25px;
-  color: var(--muted);
-  font-size: 10px;
-  letter-spacing: 2px;
-}
-
 /* CAPÍTULOS ATIVOS */
-
-.chapters {
-  background: var(--cream);
-}
 
 .chapters-grid {
   display: grid;
@@ -409,7 +362,7 @@ img {
   border: 1px solid var(--border);
   border-top: 5px solid var(--red);
   box-shadow: 0 10px 30px rgba(60, 30, 20, 0.05);
-  transition: transform 0.25s, box-shadow 0.25s;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .chapter-card:hover {
@@ -457,6 +410,9 @@ img {
 /* MEMÓRIA REGIONAL */
 
 .memory-section {
+  max-width: none;
+  padding-left: max(35px, calc((100% - 1170px) / 2));
+  padding-right: max(35px, calc((100% - 1170px) / 2));
   background: #F0E9DE;
 }
 
@@ -482,7 +438,7 @@ img {
   line-height: 1.1;
 }
 
-.memory-card p {
+.memory-card p:not(.chapter-location) {
   color: var(--muted);
   font-size: 12px;
   line-height: 1.9;
@@ -498,142 +454,327 @@ img {
   text-transform: uppercase;
 }
 
-/* LIDERANÇAS REGIONAIS */
+/* GALERIA DE VISITAS */
 
-.leader {
+.visits-section {
+  max-width: none;
+  padding-left: max(35px, calc((100% - 1170px) / 2));
+  padding-right: max(35px, calc((100% - 1170px) / 2));
   background: var(--cream);
 }
 
-.leader-card {
+.visits-intro {
+  margin: -10px 0 30px;
+  padding: 32px 38px;
+  background: var(--wine);
+  color: var(--white);
+}
+
+.visits-intro-text h3 {
+  color: var(--white);
+  font-family: "Bahiana", Georgia, serif;
+  font-size: 38px;
+  font-weight: 400;
+}
+
+.visits-intro-text p {
+  max-width: 700px;
+  margin-top: 8px;
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 12px;
+  line-height: 1.9;
+}
+
+.visits-grid {
   display: grid;
-  grid-template-columns: 360px 1fr;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.visit-card {
   overflow: hidden;
   background: var(--white);
   border: 1px solid var(--border);
-  box-shadow: 0 15px 40px rgba(60, 30, 20, 0.06);
+  box-shadow: 0 10px 28px rgba(60, 30, 20, 0.05);
 }
 
-.leader-card--mcr {
-  border-top: 5px solid #47764E;
+.visit-image-placeholder {
+  min-height: 230px;
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background:
+    linear-gradient(135deg, rgba(99, 23, 22, 0.94), rgba(140, 24, 24, 0.82)),
+    var(--wine);
+  color: var(--white);
+  text-align: center;
 }
 
-.leader-photo {
-  min-height: 440px;
-  background: #E7EDE5;
+.visit-image-placeholder span {
+  color: rgba(255, 255, 255, 0.35);
+  font-family: "Bahiana", Georgia, serif;
+  font-size: 65px;
+  line-height: 1;
+}
+
+.visit-image-placeholder p {
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 10px;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.visit-info {
+  padding: 25px;
+}
+
+.visit-date {
+  color: var(--gold);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.visit-info h3 {
+  margin: 8px 0;
+  color: var(--wine);
+  font-family: "Bahiana", Georgia, serif;
+  font-size: 31px;
+  font-weight: 400;
+}
+
+.visit-info p:last-child {
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.9;
+}
+
+/* LIDERANÇAS — DESTAQUE DO MCR */
+
+.leaders-section {
+  max-width: none;
+  padding-left: max(35px, calc((100% - 1170px) / 2));
+  padding-right: max(35px, calc((100% - 1170px) / 2));
+  background: #F0E9DE;
+}
+
+.mcr-feature {
+  position: relative;
+  min-height: 520px;
+  display: grid;
+  grid-template-columns: minmax(320px, 0.88fr) minmax(0, 1.12fr);
   overflow: hidden;
+  background:
+    radial-gradient(circle at 82% 18%, rgba(166, 129, 60, 0.18), transparent 32%),
+    linear-gradient(125deg, #631716 0%, #751918 55%, #8C1818 100%);
+  box-shadow: 0 22px 55px rgba(55, 17, 15, 0.18);
 }
 
-.leader-photo img {
+.mcr-feature::after {
+  content: "3ª";
+  position: absolute;
+  right: 25px;
+  bottom: -115px;
+  color: rgba(255, 255, 255, 0.045);
+  font-family: "Bahiana", Georgia, serif;
+  font-size: 390px;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.mcr-feature-photo {
+  position: relative;
+  min-height: 520px;
+  overflow: hidden;
+  background: #3E1715;
+}
+
+.mcr-feature-photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, rgba(39, 9, 8, 0.25), transparent 45%);
+  pointer-events: none;
+}
+
+.mcr-feature-photo > img:first-child {
   width: 100%;
   height: 100%;
-  min-height: 440px;
-  display: block;
+  min-height: 520px;
   object-fit: cover;
-  object-position: center top;
+  object-position: center 20%;
 }
 
-.leader-info {
-  padding: 50px;
+.mcr-feature-emblem {
+  position: absolute;
+  z-index: 2;
+  left: 25px;
+  bottom: 24px;
+  width: 105px;
+  height: 105px;
+  padding: 9px;
+  object-fit: contain;
+  background: rgba(255, 255, 255, 0.94);
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.22);
+}
+
+.mcr-feature-content {
+  position: relative;
+  z-index: 1;
   align-self: center;
+  padding: 62px 58px;
+  color: var(--white);
 }
 
-.leader-role {
-  color: #47764E;
+.mcr-feature-label {
+  display: inline-block;
+  padding: 9px 13px;
+  color: #F1DDAF;
+  border: 1px solid rgba(232, 207, 158, 0.5);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.mcr-feature-content h3 {
+  margin: 22px 0 4px;
+  color: var(--white);
+  font-family: "Bahiana", Georgia, serif;
+  font-size: clamp(48px, 5.3vw, 75px);
+  font-weight: 400;
+  line-height: 0.98;
+}
+
+.mcr-feature-title {
+  margin-bottom: 25px;
+  color: #E8CF9E;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.mcr-feature-description {
+  position: relative;
+  z-index: 1;
+  margin-top: 13px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 11px;
+  line-height: 1.95;
+}
+
+.mcr-feature-button {
+  position: relative;
+  z-index: 2;
+  min-height: 48px;
+  width: fit-content;
+  margin-top: 30px;
+  padding: 13px 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--gold);
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.3px;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.mcr-feature-button:hover {
+  background: #8D6D31;
+  transform: translateY(-2px);
+}
+
+.mcr-feature-button span {
+  font-size: 15px;
+}
+
+/* OFICIAL EXECUTIVO */
+
+.leader-placeholder {
+  max-width: 850px;
+  min-height: 260px;
+  margin: 35px auto 0;
+  padding: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.65);
+  border: 1px dashed rgba(99, 23, 22, 0.25);
+  text-align: center;
+}
+
+.leader-placeholder .leader-role {
+  color: var(--gold);
   font-size: 10px;
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
 
-.leader-info h3 {
-  margin: 12px 0 18px;
-  color: var(--wine);
-  font-family: "Bahiana", Georgia, serif;
-  font-size: clamp(38px, 5vw, 55px);
-  font-weight: 400;
-  line-height: 1.05;
-}
-
-.leader-info p {
-  margin-bottom: 14px;
-  color: var(--muted);
-  font-size: 12px;
-  line-height: 2;
-}
-
-.leader-tag {
-  display: inline-block;
-  margin-top: 10px;
-  padding: 8px 13px;
-  color: #356B45;
-  background: #E7F0E7;
-  font-size: 9px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-
-.leader-placeholder {
-  min-height: 300px;
-  padding: 45px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: #F0E9DE;
-  border: 1px dashed rgba(99, 23, 22, 0.25);
-  text-align: center;
-}
-
 .leader-placeholder h3 {
+  margin-top: 8px;
   color: var(--wine);
   font-family: "Bahiana", Georgia, serif;
-  font-size: 36px;
+  font-size: 40px;
   font-weight: 400;
 }
 
 .leader-placeholder p {
-  max-width: 430px;
-  margin-top: 12px;
+  max-width: 480px;
+  margin: 10px auto 0;
   color: var(--muted);
-  font-size: 12px;
+  font-size: 11px;
+  line-height: 1.9;
 }
 
 /* TERRITÓRIO */
 
 .territory {
-  padding-top: 65px;
+  padding-top: 85px;
 }
 
 .territory-content {
-  min-height: 270px;
-  padding: 50px;
-  display: flex;
-  align-items: center;
-  gap: 55px;
-  background: #EEE6DA;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 15px;
 }
 
-.territory-number {
+.territory-item {
+  min-height: 190px;
+  padding: 25px;
+  background: #EEE6DA;
+  border-bottom: 3px solid var(--gold);
+}
+
+.territory-item span {
   color: var(--gold);
   font-family: "Bahiana", Georgia, serif;
-  font-size: 155px;
+  font-size: 48px;
   line-height: 1;
 }
 
-.territory-content h3 {
+.territory-item h3 {
+  margin-top: 15px;
   color: var(--wine);
   font-family: "Bahiana", Georgia, serif;
-  font-size: 42px;
+  font-size: 32px;
   font-weight: 400;
 }
 
-.territory-content p {
-  max-width: 650px;
-  margin-top: 10px;
+.territory-item p {
+  margin-top: 4px;
   color: var(--muted);
-  font-size: 13px;
-  line-height: 1.9;
+  font-size: 10px;
 }
 
 /* CONTATO */
@@ -667,14 +808,22 @@ img {
   line-height: 1.9;
 }
 
-.button-light {
+.contact-button {
   flex-shrink: 0;
+  padding: 15px 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   background: var(--white);
   color: var(--wine);
+  font-size: 10px;
+  font-weight: 700;
+  transition: background 0.2s ease, transform 0.2s ease;
 }
 
-.button-light:hover {
+.contact-button:hover {
   background: #F0E4D2;
+  transform: translateY(-2px);
 }
 
 /* RODAPÉ */
@@ -684,7 +833,7 @@ img {
   background: #F0E9DE;
 }
 
-.footer-main {
+.footer-content {
   max-width: 1240px;
   margin: auto;
   display: flex;
@@ -692,31 +841,35 @@ img {
   gap: 22px;
 }
 
-.footer-main img {
+.footer-content > img {
   width: 90px;
   height: 75px;
   object-fit: contain;
 }
 
-.footer-main h2 {
+.footer-text h3 {
   color: var(--wine);
   font-family: "Bahiana", Georgia, serif;
   font-size: 35px;
   font-weight: 400;
 }
 
-.footer-main p {
+.footer-text p {
   color: var(--muted);
   font-size: 10px;
+}
+
+.footer-text .footer-phrase {
+  margin-top: 8px;
+  color: var(--wine);
+  font-size: 10px;
+  font-weight: 700;
 }
 
 .footer-bottom {
   max-width: 1240px;
   margin: 40px auto 0;
   padding-top: 20px;
-  display: flex;
-  justify-content: space-between;
-  gap: 15px;
   border-top: 1px solid var(--border);
   color: var(--muted);
   font-size: 10px;
@@ -724,54 +877,57 @@ img {
 
 /* TABLETS */
 
-@media (max-width: 900px) {
-  .header-inner {
+@media (max-width: 1000px) {
+  .header-content {
     padding: 15px 22px;
   }
 
-  .navigation {
-    gap: 15px;
+  .nav {
+    gap: 13px;
   }
 
-  .navigation a {
+  .nav a {
     font-size: 10px;
   }
 
-  .hero {
-    min-height: 620px;
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  .section {
-    padding: 90px 28px;
+  .mcr-feature {
+    grid-template-columns: minmax(270px, 0.85fr) minmax(0, 1.15fr);
   }
 
-  .leader-card {
-    grid-template-columns: 290px 1fr;
+  .mcr-feature-content {
+    padding: 42px 35px;
   }
 
-  .leader-info {
-    padding: 35px;
+  .mcr-feature-photo,
+  .mcr-feature-photo > img:first-child {
+    min-height: 480px;
   }
 
-  .leader-photo,
-  .leader-photo img {
-    min-height: 400px;
+  .mcr-feature-content h3 {
+    font-size: 55px;
+  }
+
+  .territory-content {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 /* CELULARES E TELAS MENORES */
 
 @media (max-width: 700px) {
-  .header-inner {
+  .header-content {
     flex-direction: column;
     padding: 17px 18px;
     gap: 18px;
   }
 
-  .navigation {
+  .nav {
     width: 100%;
     justify-content: center;
-    flex-wrap: wrap;
     gap: 12px 18px;
   }
 
@@ -781,17 +937,11 @@ img {
   }
 
   .hero-content {
-    padding: 75px 24px 110px;
+    padding: 75px 24px 90px;
   }
 
-  .hero-description {
+  .hero-content > p:not(.eyebrow) {
     font-size: 13px;
-  }
-
-  .hero-footer {
-    padding: 16px 20px;
-    font-size: 8px;
-    letter-spacing: 1px;
   }
 
   .section {
@@ -807,15 +957,38 @@ img {
     gap: 20px;
   }
 
-  .distance-section {
-    padding: 70px 22px;
+  .intro-content .eyebrow {
+    margin-bottom: -10px;
+  }
+
+  .management-section,
+  .memory-section,
+  .visits-section,
+  .leaders-section {
+    padding: 75px 22px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+  }
+
+  .stat-card {
+    min-height: 190px;
+    padding: 22px 17px;
+  }
+
+  .stat-number {
+    font-size: 60px;
   }
 
   .quote-section {
     padding: 75px 22px;
   }
 
-  .chapters-grid {
+  .chapters-grid,
+  .memory-grid,
+  .visits-grid {
     grid-template-columns: 1fr;
     row-gap: 24px;
   }
@@ -825,45 +998,61 @@ img {
     padding: 30px;
   }
 
-  .memory-grid {
+  .visits-intro {
+    padding: 27px;
+  }
+
+  .visit-image-placeholder {
+    min-height: 210px;
+  }
+
+  .mcr-feature {
     grid-template-columns: 1fr;
   }
 
-  .leader-card {
-    grid-template-columns: 1fr;
+  .mcr-feature-photo {
+    min-height: 390px;
+    max-height: 500px;
   }
 
-  .leader-photo {
-    min-height: 350px;
-    max-height: 480px;
+  .mcr-feature-photo > img:first-child {
+    min-height: 390px;
+    max-height: 500px;
+    object-position: center 18%;
   }
 
-  .leader-photo img {
-    min-height: 350px;
-    max-height: 480px;
+  .mcr-feature-emblem {
+    width: 85px;
+    height: 85px;
+    left: 18px;
+    bottom: 18px;
   }
 
-  .leader-info {
-    padding: 30px;
+  .mcr-feature-content {
+    padding: 38px 28px 42px;
+  }
+
+  .mcr-feature-content h3 {
+    font-size: clamp(48px, 12vw, 65px);
+  }
+
+  .mcr-feature::after {
+    right: -5px;
+    bottom: -65px;
+    font-size: 250px;
   }
 
   .leader-placeholder {
-    padding: 35px 25px;
+    padding: 32px 22px;
   }
 
   .territory-content {
-    padding: 30px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 12px;
+    grid-template-columns: 1fr 1fr;
   }
 
-  .territory-number {
-    font-size: 110px;
-  }
-
-  .territory-content h3 {
-    font-size: 35px;
+  .territory-item {
+    min-height: 160px;
+    padding: 20px;
   }
 
   .contact-banner {
@@ -875,11 +1064,6 @@ img {
   .footer {
     padding: 40px 22px 20px;
   }
-
-  .footer-bottom {
-    flex-direction: column;
-    gap: 8px;
-  }
 }
 
 /* CELULARES PEQUENOS */
@@ -890,15 +1074,15 @@ img {
     height: 52px;
   }
 
-  .brand strong {
+  .brand span {
     font-size: 14px;
   }
 
-  .navigation {
+  .nav {
     gap: 10px 13px;
   }
 
-  .navigation a {
+  .nav a {
     font-size: 9px;
   }
 
@@ -906,21 +1090,12 @@ img {
     font-size: 65px;
   }
 
-  .hero-footer {
-    font-size: 7px;
-    padding: 13px 15px;
+  .stats-grid {
+    grid-template-columns: 1fr;
   }
 
-  .distance-counter {
-    gap: 7px;
-  }
-
-  .distance-number {
-    font-size: 85px;
-  }
-
-  .distance-unit {
-    font-size: 32px;
+  .stat-card {
+    min-height: 160px;
   }
 
   .chapter-card h3,
@@ -928,24 +1103,43 @@ img {
     font-size: 30px;
   }
 
-  .leader-info h3 {
-    font-size: 40px;
+  .mcr-feature-photo,
+  .mcr-feature-photo > img:first-child {
+    min-height: 340px;
   }
 
-  .territory-number {
-    font-size: 90px;
+  .mcr-feature-content {
+    padding: 32px 22px 36px;
+  }
+
+  .mcr-feature-label {
+    font-size: 8px;
+    letter-spacing: 1.2px;
+  }
+
+  .mcr-feature-content h3 {
+    font-size: 46px;
+  }
+
+  .territory-content {
+    grid-template-columns: 1fr;
   }
 
   .contact-banner h2 {
     font-size: 40px;
   }
 
-  .footer-main img {
+  .footer-content {
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .footer-content > img {
     width: 65px;
     height: 60px;
   }
 
-  .footer-main h2 {
+  .footer-text h3 {
     font-size: 28px;
   }
 }
