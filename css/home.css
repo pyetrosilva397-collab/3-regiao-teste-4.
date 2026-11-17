@@ -393,19 +393,22 @@ img {
 .chapters-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 22px;
+  column-gap: 35px;
+  row-gap: 35px;
+  align-items: stretch;
 }
 
 .chapter-card {
-  min-height: 250px;
-  padding: 35px;
+  min-height: 390px;
+  padding: 42px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 25px;
   background: var(--white);
   border: 1px solid var(--border);
-  border-top: 4px solid var(--red);
-  box-shadow: 0 10px 30px rgba(60, 30, 20, 0.04);
+  border-top: 5px solid var(--red);
+  box-shadow: 0 10px 30px rgba(60, 30, 20, 0.05);
   transition: transform 0.25s, box-shadow 0.25s;
 }
 
@@ -423,24 +426,25 @@ img {
 }
 
 .chapter-card h3 {
-  margin: 15px 0;
+  margin: 16px 0 20px;
   color: var(--wine);
   font-family: "Bahiana", Georgia, serif;
-  font-size: 34px;
+  font-size: 37px;
   font-weight: 400;
-  line-height: 1.1;
+  line-height: 1.12;
 }
 
 .chapter-card p {
+  margin-bottom: 15px;
   color: var(--muted);
   font-size: 12px;
-  line-height: 1.9;
+  line-height: 2;
 }
 
 .chapter-status {
   width: fit-content;
-  margin-top: 22px;
-  padding: 6px 12px;
+  margin-top: auto;
+  padding: 7px 13px;
   color: #356B45;
   background: #E7F0E7;
   border-radius: 2px;
@@ -811,14 +815,18 @@ img {
     padding: 75px 22px;
   }
 
-  .chapters-grid,
-  .memory-grid {
+  .chapters-grid {
     grid-template-columns: 1fr;
+    row-gap: 24px;
   }
 
-  .chapter-card,
-  .memory-card {
-    padding: 28px;
+  .chapter-card {
+    min-height: auto;
+    padding: 30px;
+  }
+
+  .memory-grid {
+    grid-template-columns: 1fr;
   }
 
   .leader-card {
