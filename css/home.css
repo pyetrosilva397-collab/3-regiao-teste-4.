@@ -1683,7 +1683,13 @@ a {
 }
 /* CONTATOS — OCULTOS TEMPORARIAMENTE */
 
+/* Oculta a seção de contatos */
 #contatos,
 .contact-banner {
+  display: none !important;
+}
+
+/* Oculta o link Contatos do menu */
+.nav a[href="#contatos"] {
   display: none !important;
 }
