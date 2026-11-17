@@ -1475,3 +1475,271 @@ mark {
   color: var(--ink);
   border-color: var(--gold);
 }
+
+/* =========================================================
+   IDENTIDADE VISUAL DAS LIDERANÇAS REGIONAIS
+   MCR: Verde
+   OE: Roxo
+   ========================================================= */
+
+/* ---------- MESTRE CONSELHEIRO REGIONAL ---------- */
+
+.card--mcr:not(.card--featured) {
+  background: linear-gradient(145deg, #ffffff, #e8f4ec);
+  border-color: rgba(35, 135, 90, 0.35);
+  box-shadow: 0 18px 38px rgba(23, 107, 69, 0.10);
+}
+
+.card--mcr:not(.card--featured)::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: linear-gradient(180deg, #23875a, #176b45);
+}
+
+.card--mcr .card-cargo { color: #176b45; }
+
+.card--mcr .card-nome {
+  color: #145638;
+  background-image: linear-gradient(90deg, #23875a, #8bbd9e);
+}
+
+.card--mcr .card-phone { border-top-color: rgba(35, 135, 90, 0.25); }
+.card--mcr .card-phone .num { color: #176b45; }
+
+.card--mcr .copy-btn {
+  color: #176b45;
+  background: rgba(35, 135, 90, 0.08);
+  border-color: rgba(35, 135, 90, 0.25);
+}
+
+.card--mcr .copy-btn:hover,
+.card--mcr .copy-btn.copied {
+  color: #fff;
+  background: #176b45;
+  border-color: #176b45;
+}
+
+.card--mcr .btn-wa {
+  background: linear-gradient(135deg, #23875a, #145638);
+  box-shadow: 0 12px 24px rgba(23, 107, 69, 0.2);
+}
+
+.card--mcr .btn-call {
+  color: #176b45;
+  border-color: rgba(35, 135, 90, 0.4);
+}
+
+.card--mcr .btn-call:hover {
+  color: #fff;
+  background: #176b45;
+  border-color: #176b45;
+}
+
+.card--mcr .btn-save {
+  color: #176b45;
+  background: rgba(35, 135, 90, 0.08);
+  border-color: rgba(35, 135, 90, 0.35);
+}
+
+.card--mcr .btn-save:hover {
+  color: #fff;
+  background: #176b45;
+  border-color: #176b45;
+}
+
+.card--mcr .tag {
+  color: #176b45;
+  background: #d8ebdf;
+}
+
+.card--mcr.card--featured {
+  background:
+    radial-gradient(ellipse at 100% 0%, rgba(139, 189, 158, 0.22), transparent 55%),
+    linear-gradient(145deg, #23875a, #145638 75%, #10472f);
+  border-color: rgba(139, 189, 158, 0.65);
+  box-shadow: 0 24px 54px rgba(20, 86, 56, 0.25);
+}
+
+.card--mcr.card--featured::before {
+  background: linear-gradient(90deg, #23875a, #a8d3b7, #176b45);
+}
+
+.card--mcr.card--featured .card-cargo {
+  color: #145638;
+  background: linear-gradient(135deg, #d8ebdf, #a8d3b7);
+}
+
+.card--mcr.card--featured .card-nome {
+  color: #fff;
+  background-image: linear-gradient(90deg, #a8d3b7, #ffffff);
+}
+
+.card--mcr.card--featured .card-phone .num { color: #fff; }
+
+.card--mcr.card--featured .copy-btn {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.card--mcr.card--featured .btn-wa {
+  background: linear-gradient(135deg, #319c6c, #10472f);
+}
+
+.card--mcr.card--featured .btn-call {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.card--mcr.card--featured .btn-call:hover {
+  color: #145638;
+  background: #fff;
+  border-color: #fff;
+}
+
+.card--mcr.card--featured .btn-save {
+  color: #d8ebdf;
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(216, 235, 223, 0.5);
+}
+
+.card--mcr.card--featured .btn-save:hover {
+  color: #145638;
+  background: #d8ebdf;
+  border-color: #d8ebdf;
+}
+
+/* ---------- OFICIAL EXECUTIVO ---------- */
+
+.card--oe:not(.card--featured) {
+  background: linear-gradient(145deg, #ffffff, #f1eaf7);
+  border-color: rgba(123, 75, 163, 0.35);
+  box-shadow: 0 18px 38px rgba(99, 53, 139, 0.10);
+}
+
+.card--oe:not(.card--featured)::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: linear-gradient(180deg, #8b5bb5, #63358b);
+}
+
+.card--oe .card-cargo { color: #63358b; }
+
+.card--oe .card-nome {
+  color: #4e286f;
+  background-image: linear-gradient(90deg, #7b4ba3, #b99bd2);
+}
+
+.card--oe .card-phone { border-top-color: rgba(123, 75, 163, 0.25); }
+.card--oe .card-phone .num { color: #63358b; }
+
+.card--oe .copy-btn {
+  color: #63358b;
+  background: rgba(123, 75, 163, 0.08);
+  border-color: rgba(123, 75, 163, 0.25);
+}
+
+.card--oe .copy-btn:hover,
+.card--oe .copy-btn.copied {
+  color: #fff;
+  background: #63358b;
+  border-color: #63358b;
+}
+
+.card--oe .btn-wa {
+  background: linear-gradient(135deg, #8b5bb5, #4e286f);
+  box-shadow: 0 12px 24px rgba(99, 53, 139, 0.2);
+}
+
+.card--oe .btn-call {
+  color: #63358b;
+  border-color: rgba(123, 75, 163, 0.4);
+}
+
+.card--oe .btn-call:hover {
+  color: #fff;
+  background: #63358b;
+  border-color: #63358b;
+}
+
+.card--oe .btn-save {
+  color: #63358b;
+  background: rgba(123, 75, 163, 0.08);
+  border-color: rgba(123, 75, 163, 0.35);
+}
+
+.card--oe .btn-save:hover {
+  color: #fff;
+  background: #63358b;
+  border-color: #63358b;
+}
+
+.card--oe .tag {
+  color: #63358b;
+  background: #e8dcf1;
+}
+
+.card--oe.card--featured {
+  background:
+    radial-gradient(ellipse at 100% 0%, rgba(185, 155, 210, 0.22), transparent 55%),
+    linear-gradient(145deg, #7b4ba3, #4e286f 75%, #392052);
+  border-color: rgba(185, 155, 210, 0.65);
+  box-shadow: 0 24px 54px rgba(78, 40, 111, 0.25);
+}
+
+.card--oe.card--featured::before {
+  background: linear-gradient(90deg, #7b4ba3, #d0b9e3, #63358b);
+}
+
+.card--oe.card--featured .card-cargo {
+  color: #4e286f;
+  background: linear-gradient(135deg, #e8dcf1, #cbb5df);
+}
+
+.card--oe.card--featured .card-nome {
+  color: #fff;
+  background-image: linear-gradient(90deg, #cbb5df, #ffffff);
+}
+
+.card--oe.card--featured .card-phone .num { color: #fff; }
+
+.card--oe.card--featured .copy-btn {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.card--oe.card--featured .btn-wa {
+  background: linear-gradient(135deg, #9669bd, #392052);
+}
+
+.card--oe.card--featured .btn-call {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.4);
+}
+
+.card--oe.card--featured .btn-call:hover {
+  color: #4e286f;
+  background: #fff;
+  border-color: #fff;
+}
+
+.card--oe.card--featured .btn-save {
+  color: #e8dcf1;
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(232, 220, 241, 0.5);
+}
+
+.card--oe.card--featured .btn-save:hover {
+  color: #4e286f;
+  background: #e8dcf1;
+  border-color: #e8dcf1;
+}
