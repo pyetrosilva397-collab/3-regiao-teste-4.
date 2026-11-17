@@ -1681,3 +1681,9 @@ a {
     animation-iteration-count: 1 !important;
   }
 }
+/* CONTATOS — OCULTOS TEMPORARIAMENTE */
+
+#contatos,
+.contact-banner {
+  display: none !important;
+}
