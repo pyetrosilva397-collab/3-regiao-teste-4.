@@ -11,7 +11,7 @@
 
   <meta
     name="description"
-    content="Portal institucional da 3ª Região Administrativa da Ordem DeMolay do Ceará."
+    content="Portal institucional da 3ª Região Administrativa da Ordem DeMolay do Ceará. Conheça nossos Capítulos, lideranças, história e atividades."
   >
 
   <link rel="icon" href="assets/brasao-icon.png" type="image/png">
@@ -20,6 +20,7 @@
 
 <body>
 
+  <!-- CABEÇALHO -->
   <header class="header">
     <div class="header-content">
 
@@ -29,21 +30,37 @@
           alt="Emblema da 3ª Região Administrativa"
         >
 
-        <div>
+        <div class="brand-text">
           <span>3ª Região</span>
           <small>DeMolay Ceará</small>
         </div>
       </a>
 
-      <nav class="nav">
+      <nav class="nav" id="menu-principal">
         <a href="#inicio">Início</a>
         <a href="#regiao">A Região</a>
-        <a href="#gestao">A Gestão</a>
         <a href="#capitulos">Capítulos</a>
-        <a href="#visitas">Visitas</a>
+        <a href="#gestao">Gestão</a>
         <a href="#liderancas">Lideranças</a>
-        <a href="contatos.html">Contatos</a>
+        <a href="#historia">História</a>
+        <a href="#visitas">Atuação</a>
       </nav>
+
+      <a href="#contato" class="header-button">
+        Fale conosco
+      </a>
+
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-label="Abrir menu"
+        aria-expanded="false"
+        aria-controls="menu-principal"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
 
     </div>
   </header>
@@ -51,72 +68,126 @@
 
   <main>
 
+    <!-- CAPA INSTITUCIONAL -->
     <section class="hero" id="inicio">
+
+      <div class="hero-overlay"></div>
+
       <div class="hero-content">
 
-        <p class="eyebrow">Ordem DeMolay · Ceará</p>
-
-        <h1>3ª Região Administrativa</h1>
-
-        <p>
-          Uma história construída por jovens, famílias e maçons
-          que compartilham os mesmos princípios e trabalham pelo
-          fortalecimento da Ordem DeMolay no Ceará.
+        <p class="eyebrow">
+          Ordem DeMolay · Ceará
         </p>
 
-        <a href="#regiao" class="hero-button">
-          Conheça nossa região
-        </a>
+        <h1>
+          3ª Região Administrativa
+        </h1>
+
+        <p class="hero-description">
+          Uma região construída por jovens, famílias e maçons
+          que compartilham os mesmos princípios e trabalham
+          pelo fortalecimento da Ordem DeMolay.
+        </p>
+
+        <div class="hero-actions">
+
+          <a href="#regiao" class="hero-button">
+            Conheça nossa Região
+          </a>
+
+          <a href="#capitulos" class="hero-link">
+            Nossos Capítulos
+            <span>↗</span>
+          </a>
+
+        </div>
 
       </div>
+
+      <div class="hero-footer">
+        <span>Formação</span>
+        <span>Fraternidade</span>
+        <span>Propósito</span>
+      </div>
+
     </section>
 
 
-    <section class="section intro" id="regiao">
-      <div class="intro-content">
+    <!-- APRESENTAÇÃO DA REGIÃO -->
+    <section class="section intro-section" id="regiao">
 
-        <p class="eyebrow">Quem somos</p>
+      <div class="section-label">
+        <span>01</span>
+        <p>Conheça a 3ª Região</p>
+      </div>
 
-        <h2>Uma região, muitas histórias e um mesmo propósito</h2>
+      <div class="intro-grid">
 
-        <p>
-          A 3ª Região Administrativa reúne municípios que fazem
-          parte da história e da expansão da Ordem DeMolay no Ceará.
-          Cada Capítulo possui sua própria trajetória, marcada
-          pelo trabalho de gerações de jovens e maçons que
-          contribuíram para manter vivo o ideal DeMolay.
-        </p>
+        <div class="intro-heading">
 
-        <p>
-          Nossa região representa a união de diferentes realidades,
-          cidades e gerações em torno de valores como amor filial,
-          reverência pelas coisas sagradas, cortesia, companheirismo,
-          fidelidade, pureza e patriotismo.
-        </p>
+          <p class="eyebrow">
+            Nossa identidade
+          </p>
 
-        <p>
-          Mais do que uma divisão administrativa, somos parte de
-          uma história que continua sendo escrita por aqueles
-          que acreditam na formação de jovens comprometidos
-          com suas comunidades.
-        </p>
+          <h2>
+            Diferentes cidades.
+            <span>Uma mesma fraternidade.</span>
+          </h2>
+
+        </div>
+
+        <div class="intro-text">
+
+          <p>
+            A 3ª Região Administrativa reúne municípios que fazem
+            parte da história e da expansão da Ordem DeMolay
+            no Ceará. Cada Capítulo possui sua própria trajetória,
+            marcada pelo trabalho de gerações de jovens e maçons
+            que contribuíram para manter vivo o ideal DeMolay.
+          </p>
+
+          <p>
+            Nossa Região representa a união de diferentes
+            realidades, cidades e gerações em torno dos valores
+            que orientam a Ordem: amor filial, reverência pelas
+            coisas sagradas, cortesia, companheirismo, fidelidade,
+            pureza e patriotismo.
+          </p>
+
+          <a href="#historia" class="text-link">
+            Conheça nossa história
+            <span>→</span>
+          </a>
+
+        </div>
 
       </div>
+
     </section>
 
 
+    <!-- GESTÃO EM NÚMEROS -->
     <section class="section management-section" id="gestao">
+
+      <div class="section-label">
+        <span>02</span>
+        <p>Presença regional</p>
+      </div>
 
       <div class="section-heading">
 
-        <p class="eyebrow">A presença da nossa gestão</p>
+        <p class="eyebrow">
+          Gestão em números
+        </p>
 
-        <h2>A 3ª Região em números</h2>
+        <h2>
+          Nossa caminhada em dados
+        </h2>
 
         <p>
-          Os números representam o trabalho de aproximação,
-          acompanhamento e integração dos Capítulos e das
-          cidades que fazem parte da nossa região.
+          Indicadores que registram a presença, o acompanhamento
+          e o trabalho de integração realizado pela gestão
+          da 3ª Região.
         </p>
 
       </div>
@@ -124,27 +195,54 @@
       <div class="stats-grid">
 
         <article class="stat-card">
+
           <span class="stat-number" data-target="4">0</span>
+
           <h3>Capítulos ativos</h3>
-          <p>Capítulos que atualmente integram a 3ª Região.</p>
+
+          <p>
+            Capítulos que atualmente integram a 3ª Região.
+          </p>
+
         </article>
 
+
         <article class="stat-card">
-          <span class="stat-number" data-target="1">0</span>
+
+          <span class="stat-number" data-target="0">0</span>
+
           <h3>Cidades visitadas</h3>
-          <p>Municípios alcançados pelas visitas da gestão regional.</p>
+
+          <p>
+            Municípios alcançados pelas visitas da gestão regional.
+          </p>
+
         </article>
 
+
         <article class="stat-card">
-          <span class="stat-number" data-target="1">0</span>
+
+          <span class="stat-number" data-target="0">0</span>
+
           <h3>Visitas realizadas</h3>
-          <p>Registros de visitas e encontros com os Capítulos.</p>
+
+          <p>
+            Registros de visitas e encontros com os Capítulos.
+          </p>
+
         </article>
+
 
         <article class="stat-card stat-card--distance">
+
           <span class="stat-number" data-target="193">0</span>
+
           <h3>Quilômetros percorridos</h3>
-          <p>Distância acumulada nos deslocamentos da gestão.</p>
+
+          <p>
+            Distância acumulada nos deslocamentos da gestão.
+          </p>
+
         </article>
 
       </div>
@@ -157,173 +255,252 @@
     </section>
 
 
+    <!-- FRASE INSTITUCIONAL -->
     <section class="quote-section">
+
       <div class="quote-content">
+
+        <span class="quote-mark">“</span>
+
         <p>
-          “A força de uma região está nas pessoas que constroem
-          sua história e mantêm vivo o seu propósito.”
+          A força de uma Região está nas pessoas que constroem
+          sua história e mantêm vivo o seu propósito.
         </p>
+
+        <span class="quote-signature">
+          3ª Região Administrativa · DeMolay Ceará
+        </span>
+
       </div>
+
     </section>
 
 
-    <section class="section chapters" id="capitulos">
+    <!-- CAPÍTULOS ATIVOS -->
+    <section class="section chapters-section" id="capitulos">
+
+      <div class="section-label">
+        <span>03</span>
+        <p>Organizações afiliadas</p>
+      </div>
 
       <div class="section-heading">
 
-        <p class="eyebrow">Nossa história e presença</p>
+        <p class="eyebrow">
+          Nossa presença
+        </p>
 
-        <h2>Capítulos da 3ª Região</h2>
+        <h2>
+          Capítulos da 3ª Região
+        </h2>
 
         <p>
-          Cada Capítulo representa uma história de dedicação à Ordem
-          DeMolay e de compromisso com a formação de jovens líderes.
-          Conheça um pouco mais sobre aqueles que mantêm viva essa
-          missão em nossa região.
+          Cada Capítulo representa uma história de dedicação
+          à Ordem DeMolay e de compromisso com a formação
+          de jovens líderes.
         </p>
 
       </div>
 
       <div class="chapters-grid">
 
+        <!-- IPAUMIRIM -->
         <article class="chapter-card">
-          <div>
-            <p class="chapter-location">Ipaumirim · Ceará</p>
 
-            <h3>Capítulo Tio Damião Dãozinho de Melo nº 102</h3>
-
-            <p>
-              A história da Ordem DeMolay em Ipaumirim começou a partir
-              da aproximação de Tio Damião Dãozinho de Melo com o
-              movimento DeMolay, por intermédio do Capítulo Príncipe
-              da Paz, de Cajazeiras, na Paraíba. Entre o final de 1988
-              e o início de 1989, esse contato abriu caminho para a
-              chegada da instituição ao município.
-            </p>
-
-            <p>
-              O Capítulo Deus Ipaumirim foi fundado em 25 de junho
-              de 1989 e instalado em 14 de outubro do mesmo ano,
-              tornando-se o primeiro Capítulo DeMolay instalado
-              no Ceará. Tio Dãozinho teve participação importante
-              nesse processo, inclusive como Presidente do Conselho
-              Consultivo. Posteriormente, o Capítulo recebeu seu nome
-              em reconhecimento à sua contribuição.
-            </p>
+          <div class="chapter-card-top">
+            <span class="chapter-number">102</span>
+            <span class="chapter-status">Ativo</span>
           </div>
 
-          <span class="chapter-status">Capítulo ativo</span>
+          <p class="chapter-location">
+            Ipaumirim · Ceará
+          </p>
+
+          <h3>
+            Capítulo Tio Damião Dãozinho de Melo nº 102
+          </h3>
+
+          <p>
+            A história da Ordem DeMolay em Ipaumirim começou
+            a partir da aproximação de Tio Damião Dãozinho
+            de Melo com o movimento DeMolay, por intermédio
+            do Capítulo Príncipe da Paz, de Cajazeiras,
+            na Paraíba.
+          </p>
+
+          <p>
+            Entre o final de 1988 e o início de 1989, esse
+            contato abriu caminho para a chegada da instituição
+            ao município. O Capítulo Deus Ipaumirim foi fundado
+            em 25 de junho de 1989 e instalado em 14 de outubro
+            do mesmo ano, tornando-se o primeiro Capítulo
+            DeMolay instalado no Ceará.
+          </p>
+
+          <p>
+            Tio Dãozinho teve participação importante nesse
+            processo, inclusive como Presidente do Conselho
+            Consultivo. Posteriormente, o Capítulo recebeu
+            seu nome em reconhecimento à sua contribuição.
+          </p>
+
         </article>
 
 
+        <!-- MAURITI -->
         <article class="chapter-card">
-          <div>
-            <p class="chapter-location">Mauriti · Ceará</p>
 
-            <h3>Capítulo Guardiões da Juventude Mauritiense nº 761</h3>
-
-            <p>
-              A trajetória da Ordem DeMolay em Mauriti começou a ganhar
-              forma em 2008, quando o maçom Newton João dos Santos
-              Sobral conheceu jovens DeMolays do Capítulo Juazeiro
-              nº 155, durante uma visita a Barbalha.
-            </p>
-
-            <p>
-              Seu filho, Newton João dos Santos Sobral Júnior,
-              ingressou na Ordem em dezembro de 2008 e passou a
-              frequentar o Capítulo Juazeiro, mesmo diante da distância
-              entre os municípios. Posteriormente, convidou Nailson
-              Júnior, iniciado em dezembro de 2009. A participação
-              desses jovens e o apoio da Loja Defensores da Ordem
-              nº 93 contribuíram para a criação de um Capítulo
-              no próprio município.
-            </p>
+          <div class="chapter-card-top">
+            <span class="chapter-number">761</span>
+            <span class="chapter-status">Ativo</span>
           </div>
 
-          <span class="chapter-status">Capítulo ativo</span>
+          <p class="chapter-location">
+            Mauriti · Ceará
+          </p>
+
+          <h3>
+            Capítulo Guardiões da Juventude Mauritiense nº 761
+          </h3>
+
+          <p>
+            A trajetória da Ordem DeMolay em Mauriti começou
+            a ganhar forma em 2008, quando o maçom Newton João
+            dos Santos Sobral conheceu jovens DeMolays do
+            Capítulo Juazeiro nº 155, durante uma visita
+            a Barbalha.
+          </p>
+
+          <p>
+            Seu filho, Newton João dos Santos Sobral Júnior,
+            ingressou na Ordem em dezembro de 2008 e passou
+            a frequentar o Capítulo Juazeiro, mesmo diante
+            da distância entre os municípios.
+          </p>
+
+          <p>
+            Posteriormente, convidou Nailson Júnior,
+            iniciado em dezembro de 2009. A participação
+            desses jovens e o apoio da Loja Defensores
+            da Ordem nº 93 contribuíram para a criação
+            de um Capítulo no próprio município.
+          </p>
+
         </article>
 
 
+        <!-- BARRO -->
         <article class="chapter-card">
-          <div>
-            <p class="chapter-location">Barro · Ceará</p>
 
-            <h3>Capítulo Tio Geraldo Luiz Gonzaga nº 891</h3>
-
-            <p>
-              A história do Capítulo começou a ganhar forma no primeiro
-              semestre de 2013, quando representantes do Capítulo
-              Juazeiro nº 155 e do Bethel nº 3 apresentaram a Ordem
-              DeMolay às instituições maçônicas do município.
-              A proposta foi retomada posteriormente, com o apoio
-              de uma comitiva DeMolay.
-            </p>
-
-            <p>
-              O Capítulo foi fundado em 17 de abril de 2015 e instalado
-              em 18 de julho do mesmo ano. Seu nome homenageia Geraldo
-              Luiz Gonzaga, maçom que contribuiu para a concretização
-              do projeto ao doar o terreno destinado à construção
-              do templo. Em 2018, o Capítulo recebeu o Estandarte
-              de Reconhecimento da Ordem DeMolay. Sua atuação também
-              contribuiu para a instituição do Dia do DeMolay
-              no município, celebrado em 18 de julho.
-            </p>
+          <div class="chapter-card-top">
+            <span class="chapter-number">891</span>
+            <span class="chapter-status">Ativo</span>
           </div>
 
-          <span class="chapter-status">Capítulo ativo</span>
+          <p class="chapter-location">
+            Barro · Ceará
+          </p>
+
+          <h3>
+            Capítulo Tio Geraldo Luiz Gonzaga nº 891
+          </h3>
+
+          <p>
+            A história do Capítulo começou a ganhar forma
+            no primeiro semestre de 2013, quando representantes
+            do Capítulo Juazeiro nº 155 e do Bethel nº 3
+            apresentaram a Ordem DeMolay às instituições
+            maçônicas do município.
+          </p>
+
+          <p>
+            O Capítulo foi fundado em 17 de abril de 2015
+            e instalado em 18 de julho do mesmo ano.
+            Seu nome homenageia Geraldo Luiz Gonzaga,
+            maçom que contribuiu para a concretização
+            do projeto ao doar o terreno destinado
+            à construção do templo.
+          </p>
+
+          <p>
+            Em 2018, o Capítulo recebeu o Estandarte
+            de Reconhecimento da Ordem DeMolay. Sua atuação
+            também contribuiu para a instituição do Dia
+            do DeMolay no município, celebrado em 18 de julho.
+          </p>
+
         </article>
 
 
+        <!-- AURORA -->
         <article class="chapter-card">
-          <div>
-            <p class="chapter-location">Aurora · Ceará</p>
 
-            <h3>Capítulo Terra do Senhor Menino Deus nº 908</h3>
-
-            <p>
-              A chegada da Ordem DeMolay a Aurora fez parte do processo
-              de expansão da instituição pelo leste do Cariri.
-              A iniciativa contou com a participação de Felipe
-              Bandeira, então Mestre Conselheiro Estadual, e do
-              maçom Nardeli Macedo, natural do município, que
-              estabeleceram contato com a Loja Cavalheiros da
-              Nova Aurora nº 69.
-            </p>
-
-            <p>
-              O Capítulo foi fundado em 12 de agosto de 2015
-              e instalado em 14 de novembro do mesmo ano, com
-              uma primeira turma formada por 18 jovens.
-              A instalação contou com a presença de representantes
-              de Capítulos de municípios como Mauriti, Barro,
-              Juazeiro e Brejo Santo. Atualmente, o Capítulo
-              integra a história da 3ª Região sob o nome
-              Terra do Senhor Menino Deus nº 908.
-            </p>
+          <div class="chapter-card-top">
+            <span class="chapter-number">908</span>
+            <span class="chapter-status">Ativo</span>
           </div>
 
-          <span class="chapter-status">Capítulo ativo</span>
+          <p class="chapter-location">
+            Aurora · Ceará
+          </p>
+
+          <h3>
+            Capítulo Terra do Senhor Menino Deus nº 908
+          </h3>
+
+          <p>
+            A chegada da Ordem DeMolay a Aurora fez parte
+            do processo de expansão da instituição pelo
+            leste do Cariri. A iniciativa contou com a
+            participação de Felipe Bandeira, então Mestre
+            Conselheiro Estadual, e do maçom Nardeli Macedo,
+            natural do município.
+          </p>
+
+          <p>
+            O Capítulo foi fundado em 12 de agosto de 2015
+            e instalado em 14 de novembro do mesmo ano,
+            com uma primeira turma formada por 18 jovens.
+          </p>
+
+          <p>
+            A instalação contou com a presença de representantes
+            de Capítulos de municípios como Mauriti, Barro,
+            Juazeiro e Brejo Santo. Atualmente, o Capítulo
+            integra a história da 3ª Região sob o nome
+            Terra do Senhor Menino Deus nº 908.
+          </p>
+
         </article>
 
       </div>
+
     </section>
 
 
-    <section class="section memory-section">
+    <!-- CAPÍTULOS HISTÓRICOS -->
+    <section class="section memory-section" id="historia">
+
+      <div class="section-label">
+        <span>04</span>
+        <p>Memória institucional</p>
+      </div>
 
       <div class="section-heading">
 
-        <p class="eyebrow">Uma história que permanece</p>
+        <p class="eyebrow">
+          História e legado
+        </p>
 
-        <h2>Capítulos que fazem parte da nossa história</h2>
+        <h2>
+          Capítulos que permanecem em nossa memória
+        </h2>
 
         <p>
-          Algumas trajetórias continuam presentes na memória da
-          3ª Região. Mesmo com o encerramento de suas atividades,
-          esses Capítulos deixaram sua contribuição para a expansão
-          da Ordem DeMolay em nosso território.
+          Algumas trajetórias continuam presentes na memória
+          da 3ª Região. Mesmo com o encerramento de suas
+          atividades, esses Capítulos deixaram sua contribuição
+          para a expansão da Ordem DeMolay em nosso território.
         </p>
 
       </div>
@@ -331,153 +508,229 @@
       <div class="memory-grid">
 
         <article class="memory-card">
-          <div>
-            <p class="chapter-location">Brejo Santo · Ceará</p>
 
-            <h3>Capítulo Defensores da Igualdade Brejossantense nº 864</h3>
+          <p class="chapter-location">
+            Brejo Santo · Ceará
+          </p>
 
-            <p>
-              Fundado em 13 de agosto de 2014 e instalado em
-              29 de novembro do mesmo ano, o Capítulo Defensores
-              da Igualdade Brejossantense nº 864 fez parte do
-              processo de expansão da Ordem DeMolay na região.
-              Sua instalação contou com o patrocínio da Loja
-              Cavalheiros da Harmonia nº 59.
-            </p>
-          </div>
+          <h3>
+            Capítulo Defensores da Igualdade Brejossantense nº 864
+          </h3>
 
-          <span class="memory-status">Memória regional</span>
+          <p>
+            Fundado em 13 de agosto de 2014 e instalado
+            em 29 de novembro do mesmo ano, o Capítulo
+            Defensores da Igualdade Brejossantense nº 864
+            fez parte do processo de expansão da Ordem
+            DeMolay na região.
+          </p>
+
+          <p>
+            Sua instalação contou com o patrocínio da
+            Loja Cavalheiros da Harmonia nº 59.
+          </p>
+
+          <span class="memory-status">
+            Memória regional
+          </span>
+
         </article>
 
 
         <article class="memory-card">
-          <div>
-            <p class="chapter-location">Milagres · Ceará</p>
 
-            <h3>Capítulo Tio Augusto Gomes Leite nº 851</h3>
+          <p class="chapter-location">
+            Milagres · Ceará
+          </p>
 
-            <p>
-              A história da Ordem DeMolay em Milagres está ligada
-              à trajetória de Miguel Pedro Lacerda Lins, que
-              ingressou na instituição em junho de 2013, por meio
-              do Capítulo Juazeiro nº 155. A partir dessa experiência,
-              surgiu o propósito de contribuir para que a Ordem
-              também estivesse presente em sua cidade.
-            </p>
-          </div>
+          <h3>
+            Capítulo Tio Augusto Gomes Leite nº 851
+          </h3>
 
-          <span class="memory-status">Memória regional</span>
+          <p>
+            A história da Ordem DeMolay em Milagres está
+            ligada à trajetória de Miguel Pedro Lacerda Lins,
+            que ingressou na instituição em junho de 2013,
+            por meio do Capítulo Juazeiro nº 155.
+          </p>
+
+          <p>
+            A partir dessa experiência, surgiu o propósito
+            de contribuir para que a Ordem também estivesse
+            presente em sua cidade.
+          </p>
+
+          <span class="memory-status">
+            Memória regional
+          </span>
+
         </article>
 
       </div>
+
     </section>
 
 
+    <!-- ATUAÇÃO REGIONAL -->
     <section class="section visits-section" id="visitas">
+
+      <div class="section-label">
+        <span>05</span>
+        <p>Presença e integração</p>
+      </div>
 
       <div class="section-heading">
 
-        <p class="eyebrow">Presença e integração</p>
+        <p class="eyebrow">
+          Uma gestão em movimento
+        </p>
 
-        <h2>Uma gestão em movimento</h2>
+        <h2>
+          Nossa caminhada pela Região
+        </h2>
 
         <p>
-          Cada visita é uma oportunidade de conhecer de perto
-          a realidade dos Capítulos, fortalecer os laços regionais
-          e compartilhar experiências.
+          Cada visita é uma oportunidade de conhecer
+          de perto a realidade dos Capítulos, fortalecer
+          os laços regionais e compartilhar experiências.
         </p>
 
       </div>
 
       <div class="visits-intro">
+
         <div class="visits-intro-text">
 
-          <h3>Registros da nossa caminhada</h3>
+          <h3>
+            Registros da nossa caminhada
+          </h3>
 
           <p>
-            Este espaço reúne os momentos da gestão nos municípios
-            da 3ª Região. As fotografias e os registros serão
-            adicionados ao longo do mandato.
+            Este espaço reúne os momentos da gestão
+            nos municípios da 3ª Região. As fotografias
+            e os registros serão adicionados ao longo
+            do mandato.
           </p>
 
         </div>
+
       </div>
 
       <div class="visits-grid">
 
         <article class="visit-card visit-card--empty">
+
           <div class="visit-image-placeholder">
             <span>01</span>
             <p>Fotografia da visita</p>
           </div>
 
           <div class="visit-info">
-            <p class="visit-date">Registro em breve</p>
-            <h3>Próxima visita</h3>
+
+            <p class="visit-date">
+              Registro em breve
+            </p>
+
+            <h3>
+              Próxima visita
+            </h3>
+
             <p>
               Em breve, este espaço receberá o registro
               de uma visita da gestão regional.
             </p>
+
           </div>
+
         </article>
 
 
         <article class="visit-card visit-card--empty">
+
           <div class="visit-image-placeholder">
             <span>02</span>
             <p>Fotografia da visita</p>
           </div>
 
           <div class="visit-info">
-            <p class="visit-date">Registro em breve</p>
-            <h3>Encontros regionais</h3>
-            <p>
-              Registros dos encontros e momentos de integração
-              com os Capítulos da região.
+
+            <p class="visit-date">
+              Registro em breve
             </p>
+
+            <h3>
+              Encontros regionais
+            </h3>
+
+            <p>
+              Registros dos encontros e momentos
+              de integração com os Capítulos da Região.
+            </p>
+
           </div>
+
         </article>
 
 
         <article class="visit-card visit-card--empty">
+
           <div class="visit-image-placeholder">
             <span>03</span>
             <p>Fotografia da visita</p>
           </div>
 
           <div class="visit-info">
-            <p class="visit-date">Registro em breve</p>
-            <h3>Nossa caminhada</h3>
+
+            <p class="visit-date">
+              Registro em breve
+            </p>
+
+            <h3>
+              Nossa caminhada
+            </h3>
+
             <p>
               Fotografias e lembranças das atividades
               realizadas pela liderança regional.
             </p>
+
           </div>
+
         </article>
 
       </div>
+
     </section>
 
 
-    <!-- LIDERANÇAS REGIONAIS -->
+    <!-- LIDERANÇAS -->
     <section class="section leaders-section" id="liderancas">
+
+      <div class="section-label">
+        <span>06</span>
+        <p>Representação regional</p>
+      </div>
 
       <div class="section-heading">
 
-        <p class="eyebrow">Representação regional</p>
+        <p class="eyebrow">
+          Lideranças
+        </p>
 
-        <h2>Nossas lideranças</h2>
+        <h2>
+          Quem representa a 3ª Região
+        </h2>
 
         <p>
-          Conheça os representantes responsáveis pela condução
-          e pelo acompanhamento dos trabalhos da 3ª Região
-          Administrativa.
+          Conheça os representantes responsáveis pela
+          condução e pelo acompanhamento dos trabalhos
+          da 3ª Região Administrativa.
         </p>
 
       </div>
 
 
-      <!-- PERFIL DO MCR -->
+      <!-- MESTRE CONSELHEIRO REGIONAL -->
       <article class="mcr-feature">
 
         <div class="mcr-feature-photo">
@@ -507,16 +760,17 @@
           </h3>
 
           <p class="mcr-feature-description">
-            Sua trajetória na Ordem começou em 2019, quando
-            ingressou na Ordem dos Escudeiros, integrando
-            o Castelo Protetores da Luz nº 145.
+            Sua trajetória na Ordem começou em 2019,
+            quando ingressou na Ordem dos Escudeiros,
+            integrando o Castelo Protetores da Luz nº 145.
           </p>
 
           <p class="mcr-feature-description">
-            Em 2021, foi iniciado na Ordem DeMolay pelo Capítulo
-            Tio Damião Dãozinho de Melo nº 102, de Ipaumirim.
-            Ao longo de sua caminhada, exerceu o cargo de
-            Mestre Conselheiro nos mandatos 2024.2 e 2026.2.
+            Em 2021, foi iniciado na Ordem DeMolay pelo
+            Capítulo Tio Damião Dãozinho de Melo nº 102,
+            de Ipaumirim. Ao longo de sua caminhada,
+            exerceu o cargo de Mestre Conselheiro
+            nos mandatos 2024.2 e 2026.2.
           </p>
 
           <p class="mcr-feature-description">
@@ -546,9 +800,13 @@
 
         <div class="leader-info">
 
-          <p class="leader-role">Oficial Executivo</p>
+          <p class="leader-role">
+            Oficial Executivo
+          </p>
 
-          <h3>Liderança regional</h3>
+          <h3>
+            Liderança regional
+          </h3>
 
           <p>
             Espaço reservado para a apresentação do Oficial
@@ -567,109 +825,166 @@
     </section>
 
 
-    <section class="section territory" id="territorio">
+    <!-- TERRITÓRIO -->
+    <section class="section territory-section" id="territorio">
+
+      <div class="section-label">
+        <span>07</span>
+        <p>Presença no Ceará</p>
+      </div>
 
       <div class="section-heading">
 
-        <p class="eyebrow">Nossa presença no Ceará</p>
+        <p class="eyebrow">
+          Nosso território
+        </p>
 
-        <h2>Um território conectado pela fraternidade</h2>
+        <h2>
+          Quatro cidades conectadas pela fraternidade
+        </h2>
 
         <p>
-          A 3ª Região Administrativa reúne municípios que compartilham
-          uma trajetória de trabalho, cooperação e desenvolvimento
-          da Ordem DeMolay.
+          A 3ª Região Administrativa reúne municípios
+          que compartilham uma trajetória de trabalho,
+          cooperação e desenvolvimento da Ordem DeMolay.
         </p>
 
       </div>
 
       <div class="territory-content">
 
-        <div class="territory-item">
+        <article class="territory-item">
           <span>01</span>
           <h3>Ipaumirim</h3>
           <p>Capítulo nº 102</p>
-        </div>
+        </article>
 
-        <div class="territory-item">
+        <article class="territory-item">
           <span>02</span>
           <h3>Mauriti</h3>
           <p>Capítulo nº 761</p>
-        </div>
+        </article>
 
-        <div class="territory-item">
+        <article class="territory-item">
           <span>03</span>
           <h3>Barro</h3>
           <p>Capítulo nº 891</p>
-        </div>
+        </article>
 
-        <div class="territory-item">
+        <article class="territory-item">
           <span>04</span>
           <h3>Aurora</h3>
           <p>Capítulo nº 908</p>
-        </div>
+        </article>
 
       </div>
+
     </section>
 
 
-    <section class="contact-banner">
+    <!-- CONTATO -->
+    <section class="contact-section" id="contato">
 
       <div class="contact-content">
 
-        <p class="eyebrow">Fale conosco</p>
-
-        <h2>Vamos manter nossa região conectada?</h2>
-
-        <p>
-          Acompanhe os contatos dos representantes e das lideranças
-          que fazem parte da 3ª Região Administrativa.
+        <p class="eyebrow">
+          Estamos à disposição
         </p>
 
-        <a href="contatos.html" class="contact-button">
-          Acessar diretório de contatos
-        </a>
+        <h2>
+          Vamos manter nossa Região conectada?
+        </h2>
+
+        <p>
+          Entre em contato com a liderança regional
+          ou acompanhe os canais oficiais da 3ª Região
+          Administrativa.
+        </p>
+
+        <div class="contact-actions">
+
+          <a
+            href="https://wa.me/5588997177363"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="contact-button"
+          >
+            Falar com o MCR
+            <span>↗</span>
+          </a>
+
+          <a href="contatos.html" class="contact-secondary">
+            Diretório de contatos
+          </a>
+
+        </div>
 
       </div>
+
     </section>
 
   </main>
 
 
+  <!-- RODAPÉ -->
   <footer class="footer">
 
     <div class="footer-content">
 
-      <img
-        src="assets/EMBLEMA 3° OFICIALARIA - GCE-CE.png"
-        alt="Emblema da 3ª Região Administrativa"
-      >
+      <div class="footer-brand">
 
-      <div class="footer-text">
+        <img
+          src="assets/EMBLEMA 3° OFICIALARIA - GCE-CE.png"
+          alt="Emblema da 3ª Região Administrativa"
+        >
 
-        <h3>3ª Região Administrativa</h3>
+        <div class="footer-text">
 
-        <p>Ordem DeMolay do Ceará</p>
+          <h3>
+            3ª Região Administrativa
+          </h3>
 
-        <p class="footer-phrase">
-          Formando líderes, fortalecendo propósitos em toda a 3ª Região.
-        </p>
+          <p>
+            Ordem DeMolay do Ceará
+          </p>
+
+          <p class="footer-phrase">
+            Formando líderes, fortalecendo propósitos
+            em toda a 3ª Região.
+          </p>
+
+        </div>
+
+      </div>
+
+      <div class="footer-links">
+
+        <a href="#inicio">Início</a>
+        <a href="#regiao">A Região</a>
+        <a href="#capitulos">Capítulos</a>
+        <a href="#liderancas">Lideranças</a>
+        <a href="contatos.html">Contatos</a>
 
       </div>
 
     </div>
 
     <div class="footer-bottom">
+
       <p>
         © 2026 · 3ª Região Administrativa · Ordem DeMolay Ceará
       </p>
+
     </div>
 
   </footer>
 
 
+  <!-- CONTADORES E MENU RESPONSIVO -->
   <script>
     document.addEventListener("DOMContentLoaded", () => {
+
+      /* CONTADORES */
 
       const counters = document.querySelectorAll(".stat-number");
       const duration = 1600;
@@ -695,12 +1010,14 @@
             target * easedProgress
           );
 
-          counter.textContent = currentValue.toLocaleString("pt-BR");
+          counter.textContent =
+            currentValue.toLocaleString("pt-BR");
 
           if (progress < 1) {
             requestAnimationFrame(updateCounter);
           } else {
-            counter.textContent = target.toLocaleString("pt-BR");
+            counter.textContent =
+              target.toLocaleString("pt-BR");
           }
 
         }
@@ -709,25 +1026,68 @@
       }
 
 
-      const observer = new IntersectionObserver((entries, observer) => {
+      const observer = new IntersectionObserver(
+        (entries, observer) => {
 
-        entries.forEach(entry => {
+          entries.forEach(entry => {
 
-          if (entry.isIntersecting) {
-            animateCounter(entry.target);
-            observer.unobserve(entry.target);
-          }
+            if (entry.isIntersecting) {
+              animateCounter(entry.target);
+              observer.unobserve(entry.target);
+            }
 
-        });
+          });
 
-      }, {
-        threshold: 0.5
-      });
+        },
+        {
+          threshold: 0.5
+        }
+      );
 
 
       counters.forEach(counter => {
         observer.observe(counter);
       });
+
+
+      /* MENU PARA CELULAR */
+
+      const menuToggle = document.querySelector(".menu-toggle");
+      const menu = document.querySelector(".nav");
+
+      if (menuToggle && menu) {
+
+        menuToggle.addEventListener("click", () => {
+
+          const isOpen =
+            menuToggle.getAttribute("aria-expanded") === "true";
+
+          menuToggle.setAttribute(
+            "aria-expanded",
+            String(!isOpen)
+          );
+
+          menu.classList.toggle("nav--open", !isOpen);
+
+        });
+
+
+        menu.querySelectorAll("a").forEach(link => {
+
+          link.addEventListener("click", () => {
+
+            menu.classList.remove("nav--open");
+
+            menuToggle.setAttribute(
+              "aria-expanded",
+              "false"
+            );
+
+          });
+
+        });
+
+      }
 
     });
   </script>
