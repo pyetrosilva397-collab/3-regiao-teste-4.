@@ -1,0 +1,319 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>CEOD-CE 2026 | 3ª Região Administrativa</title>
+
+  <link rel="icon" href="../assets/brasao-icon.png">
+
+  <style>
+    @font-face {
+      font-family: "Bahiana";
+      src: url("../assets/Bahiana-Regular.ttf") format("truetype");
+    }
+
+    @font-face {
+      font-family: "Montserrat";
+      src: url("../assets/Montserrat-Bold.ttf") format("truetype");
+      font-weight: 700;
+    }
+
+    :root {
+      --vermelho: #8C1818;
+      --vinho: #631716;
+      --dourado: #A6813C;
+      --creme: #F8F5EF;
+      --branco: #FFFFFF;
+      --texto: #292522;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: var(--creme);
+      color: var(--texto);
+      font-family: "Montserrat", Arial, sans-serif;
+    }
+
+    header {
+      background: var(--vinho);
+      padding: 20px 7%;
+    }
+
+    .header-content {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      color: var(--branco);
+      text-decoration: none;
+      font-size: 14px;
+      letter-spacing: 1px;
+    }
+
+    .back-link {
+      color: var(--branco);
+      text-decoration: none;
+      font-size: 13px;
+      border-bottom: 1px solid var(--dourado);
+      padding-bottom: 5px;
+    }
+
+    .hero {
+      min-height: 420px;
+      background:
+        linear-gradient(
+          rgba(35, 10, 10, 0.68),
+          rgba(35, 10, 10, 0.78)
+        ),
+        url("../assets/CAPA SITE DA 3.png") center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 70px 20px;
+      color: var(--branco);
+    }
+
+    .hero-content {
+      max-width: 850px;
+    }
+
+    .eyebrow {
+      color: #E3C98D;
+      font-size: 12px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+
+    h1 {
+      font-family: "Bahiana", Georgia, serif;
+      font-size: clamp(48px, 8vw, 90px);
+      font-weight: normal;
+      line-height: 1;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: auto;
+      padding: 70px 25px;
+    }
+
+    .section-heading {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .section-heading span {
+      color: var(--dourado);
+      font-size: 12px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .section-heading h2 {
+      font-family: "Bahiana", Georgia, serif;
+      color: var(--vinho);
+      font-size: 48px;
+      font-weight: normal;
+      margin-top: 10px;
+    }
+
+    .description {
+      max-width: 780px;
+      margin: 0 auto 45px;
+      text-align: center;
+      font-size: 14px;
+      line-height: 2;
+      color: #5D5550;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .gallery-item {
+      background: var(--branco);
+      border: 1px solid #E7DED2;
+      overflow: hidden;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 300px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gallery-caption {
+      padding: 18px;
+      color: var(--vinho);
+      font-size: 12px;
+    }
+
+    .empty-message {
+      grid-column: 1 / -1;
+      padding: 35px;
+      text-align: center;
+      border: 1px dashed #C8B99F;
+      color: #6B6258;
+      font-size: 13px;
+      line-height: 1.8;
+    }
+
+    .details {
+      margin-top: 60px;
+      padding: 30px;
+      background: var(--branco);
+      border-left: 4px solid var(--dourado);
+    }
+
+    .details h3 {
+      color: var(--vinho);
+      margin-bottom: 15px;
+      font-size: 17px;
+    }
+
+    .details p {
+      font-size: 13px;
+      line-height: 2;
+      color: #5D5550;
+    }
+
+    footer {
+      background: var(--vinho);
+      color: var(--branco);
+      text-align: center;
+      padding: 30px 20px;
+    }
+
+    footer p {
+      font-size: 12px;
+      line-height: 1.8;
+    }
+
+    footer .signature {
+      color: #E3C98D;
+      margin-top: 8px;
+    }
+
+    @media (max-width: 700px) {
+      .header-content {
+        flex-direction: column;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .gallery-item img {
+        height: 240px;
+      }
+
+      main {
+        padding: 50px 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="header-content">
+      <a class="brand" href="../index.html">
+        3ª REGIÃO ADMINISTRATIVA
+      </a>
+
+      <a class="back-link" href="../timeline.html">
+        ← Voltar à trajetória
+      </a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-content">
+      <p class="eyebrow">Gestão 2026/2027</p>
+
+      <h1>CEOD-CE 2026</h1>
+
+      <p>
+        Congresso Estadual da Ordem DeMolay do Ceará
+      </p>
+
+      <p>
+        20 a 22 de novembro de 2026 · Mombaça, Ceará
+      </p>
+    </div>
+  </section>
+
+  <main>
+    <div class="section-heading">
+      <span>Diário da Gestão</span>
+      <h2>Memórias da visita</h2>
+    </div>
+
+    <p class="description">
+      A jornada da Gestão 2026/2027 da 3ª Região Administrativa
+      começou em Mombaça, durante o Congresso Estadual da Ordem
+      DeMolay do Ceará. Este espaço reunirá os registros,
+      encontros e momentos vividos ao longo dessa primeira viagem.
+    </p>
+
+    <section class="gallery">
+      <div class="empty-message">
+        As fotografias desta visita serão adicionadas aqui.
+        <br>
+        Em breve, este álbum reunirá os registros do CEOD-CE 2026.
+      </div>
+    </section>
+
+    <div class="details">
+      <h3>Sobre a visita</h3>
+
+      <p>
+        <strong>Evento:</strong> Congresso Estadual da Ordem DeMolay
+        do Ceará — CEOD-CE 2026
+      </p>
+
+      <p>
+        <strong>Data:</strong> 20 a 22 de novembro de 2026
+      </p>
+
+      <p>
+        <strong>Local:</strong> Mombaça, Ceará
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    <p>3ª Região Administrativa · Gestão 2026/2027</p>
+
+    <p class="signature">
+      Formando líderes, fortalecendo propósitos em toda a 3ª Região.
+    </p>
+  </footer>
+
+</body>
+</html>
