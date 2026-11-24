@@ -396,7 +396,8 @@ img {
 .visit-image img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  background: #F8F5EF;
   transition: transform 0.5s ease;
 }
 
